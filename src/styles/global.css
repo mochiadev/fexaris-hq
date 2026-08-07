@@ -1,1 +1,110 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Electric Violet family (purple) */
+  --color-purple-50: #F4F1FF;
+  --color-purple-100: #E5DFFF;
+  --color-purple-200: #C9BDFF;
+  --color-purple-300: #A997FF;
+  --color-purple-400: #8A6BFF;
+  --color-purple-500: #6D52F7;
+  --color-purple-600: #5B3DF5;
+  --color-purple-700: #4B2FD9;
+  --color-purple-800: #3B22C9;
+  --color-purple-900: #2A1487;
+  --color-purple-950: #1C0A5C;
+
+  /* Electric Violet family (violet) */
+  --color-violet-50: #F4F1FF;
+  --color-violet-100: #EAE4FF;
+  --color-violet-200: #D6CCFF;
+  --color-violet-300: #B9A8FF;
+  --color-violet-400: #9B83FF;
+  --color-violet-500: #7C5CFF;
+  --color-violet-600: #5B3DF5;
+  --color-violet-700: #4B2FD9;
+  --color-violet-800: #3B22C9;
+  --color-violet-900: #2A1487;
+  --color-violet-950: #1C0A5C;
+
+  /* Electric Violet family (indigo) */
+  --color-indigo-50: #F0EEFF;
+  --color-indigo-100: #E3DFFF;
+  --color-indigo-200: #C8C2FF;
+  --color-indigo-300: #A79CFF;
+  --color-indigo-400: #8575FF;
+  --color-indigo-500: #6D52F7;
+  --color-indigo-600: #5B3DF5;
+  --color-indigo-700: #4630CC;
+  --color-indigo-800: #37249E;
+  --color-indigo-900: #12121C;
+  --color-indigo-950: #0F1117;
+
+  /* Refined Electric Blue family (blue) */
+  --color-blue-50: #EFF3FE;
+  --color-blue-100: #E3EBFD;
+  --color-blue-200: #BCCCFB;
+  --color-blue-300: #93B2FC;
+  --color-blue-400: #6E96FB;
+  --color-blue-500: #4F7DF9;
+  --color-blue-600: #3E63E0;
+  --color-blue-700: #2E4CC4;
+  --color-blue-800: #233A9C;
+  --color-blue-900: #10162E;
+  --color-blue-950: #0B1020;
+
+  /* Luminous Cyan family (cyan) */
+  --color-cyan-50: #E6FBFA;
+  --color-cyan-100: #CFF7F4;
+  --color-cyan-200: #A3F0EA;
+  --color-cyan-300: #6FE6DD;
+  --color-cyan-400: #3FDBD0;
+  --color-cyan-500: #14D8C4;
+  --color-cyan-600: #0FB9A8;
+  --color-cyan-700: #0D9486;
+  --color-cyan-800: #0C7268;
+  --color-cyan-900: #0A4F48;
+  --color-cyan-950: #062A26;
+
+  /* Growth Amber family (orange) */
+  --color-orange-50: #FFF4E5;
+  --color-orange-100: #FFE8CC;
+  --color-orange-200: #FFD199;
+  --color-orange-300: #FFBA66;
+  --color-orange-400: #FF9440;
+  --color-orange-500: #FF7A00;
+  --color-orange-600: #E16A00;
+  --color-orange-700: #B85A0A;
+  --color-orange-800: #8A450E;
+  --color-orange-900: #66330F;
+  --color-orange-950: #3B1D08;
+
+  /* Harmonized Emerald family (green) */
+  --color-green-50: #E6FBF4;
+  --color-green-100: #CFF8E8;
+  --color-green-200: #9FF2D1;
+  --color-green-300: #63E9B8;
+  --color-green-400: #2FE3A4;
+  --color-green-500: #00E6A5;
+  --color-green-600: #00C892;
+  --color-green-700: #00A37C;
+  --color-green-800: #0A7A60;
+  --color-green-900: #0B5C49;
+  --color-green-950: #05332A;
+
+  --color-emerald-400: #2FE3A4;
+  --color-emerald-500: #00E6A5;
+  --color-emerald-600: #00C892;
+  --color-emerald-700: #00A37C;
+
+  /* Semantic error (red) */
+  --color-red-500: #FF4D4D;
+  --color-red-600: #E83A3A;
+
+  /* Surface tokens for dark bands */
+  --color-bg-dark: #0F1117;
+  --color-surface: #1E222D;
+  --color-surface-border: #2A2F3D;
+}

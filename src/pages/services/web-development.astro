@@ -41,7 +41,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </section>
 
 <!-- Web Services Overview (Grid) -->
-<section class="py-20 px-4 lg:px-8 font-['Outfit'] digital-pattern bg-white" id="services">
+<section class="py-20 px-4 lg:px-8 font-sans digital-pattern bg-white" id="services">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-gray-900">Comprehensive Web Solutions</h2>
@@ -463,17 +463,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style is:global>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             background-color: #f8fafc;
             overflow-x: hidden;
         }
         
         /* Fexa Digital Signature Gradient Text */
         .gradient-text {
-            background: linear-gradient(135deg, #c084fc 0%, #60a5fa 50%, #fbbf24 100%); /* Purple-Blue-Amber */
+            background: linear-gradient(135deg, #5B3DF5 0%, #4F7DF9 50%, #14D8C4 100%); /* Violet-Blue-Cyan */
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -483,7 +482,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
         /* Darker Hero Gradient */
         .hero-bg {
-            background: linear-gradient(to bottom right, #1e1b4b, #312e81, #1e3a8a); /* Slate-900 to Indigo-900 */
+            background: linear-gradient(to bottom right, #12121C, #37249E, #10162E); /* Dark Violet to Deep Blue */
         }
 
         @keyframes gradient-shift {
