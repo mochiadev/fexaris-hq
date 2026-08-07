@@ -1,0 +1,654 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Website Maintenance & SEO Optimization | Fexa Digital"
+  
+  
+  canonical="https://fexadigital.com/more/seo-web-maintenance"
+  hideHeader={true}
+  hideFooter={true}
+>
+  <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-white shadow-md">
+	<div class="max-w-screen-xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo and Brand -->
+<div class="flex-shrink-0 flex items-center">
+  <a href="/" class="flex items-center">
+    <!-- Replace the src below with your actual logo path -->
+    <img src="../assets/fexalog.png" alt="Fexa Digital Logo"
+         class="h-10 w-auto object-contain" />
+  </a>
+  <div class="ml-2 leading-tight">
+    <span class="block text-xl font-bold text-black">FEXA DIGITAL</span>
+    <span class="block text-sm text-gray-500 tracking-wide">THE LAST WORD IN DIGITAL</span>
+  </div>
+</div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8">
+        <a href="/" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">Home</a>
+        <a href="/index#services" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">Services</a>
+        <a href="/website-quote" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">Request A Quote</a>
+        <a href="/index#faq" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">FAQ</a>
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-gray-900 hover:text-indigo-600 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200">Home</a>
+      <a href="/index#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200">Services</a>
+      <a href="/website-quote" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200">Request A Quote</a>
+      <a href="/index#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200">FAQ</a>
+    </div>
+  </div>
+    </nav>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-violet-700 via-purple-800 to-blue-800 text-white text-center py-20 px-4 sm:px-6 lg:px-8 fade-in">
+  <div class="max-w-4xl mx-auto">
+    <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+      <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+      </svg>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Website Maintenance & SEO Optimization</h1>
+    <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
+      Ensure your site stays healthy, secure, and visible with our dedicated services.
+    </p>
+  </div>
+</section>
+
+
+    <!-- What is Website Maintenance & SEO? -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">What is Website Maintenance & SEO?</h2>
+            
+            <!-- Mobile Table View -->
+            <div class="comparison-table">
+                <div class="comparison-row">
+                    <div class="comparison-cell comparison-header"></div>
+                    <div class="comparison-cell comparison-header">Website Maintenance</div>
+                    <div class="comparison-cell comparison-header">SEO Optimization</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell comparison-header">Description</div>
+                    <div class="comparison-cell">Routine care to keep your site running smoothly, securely, and efficiently.</div>
+                    <div class="comparison-cell">Strategies to improve your site's visibility and ranking in search results.</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell comparison-header">Key Features</div>
+                    <div class="comparison-cell">
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Software updates & security patches</li>
+                            <li>Regular backups & uptime monitoring</li>
+                            <li>Performance optimization</li>
+                            <li>Bug fixes & troubleshooting</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-cell">
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Keyword research & strategy</li>
+                            <li>Content optimization</li>
+                            <li>Technical SEO audits</li>
+                            <li>Link building & authority growth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Dual Column View -->
+            <div class="dual-column md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Website Maintenance</h3>
+                    <p class="text-gray-700 mb-4">
+                        Routine care to keep your site running smoothly, securely, and efficiently.
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Software updates & security patches</li>
+                        <li>Regular backups & uptime monitoring</li>
+                        <li>Performance optimization</li>
+                        <li>Bug fixes & troubleshooting</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">SEO Optimization</h3>
+                    <p class="text-gray-700 mb-4">
+                        Strategies to improve your site's visibility and ranking in search results.
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Keyword research & strategy</li>
+                        <li>Content optimization</li>
+                        <li>Technical SEO audits</li>
+                        <li>Link building & authority growth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach - Side by Side with Image -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 fade-in">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Our Approach</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Image Column -->
+            <div class="order-1 md:order-none">
+                <div class="bg-white p-4 rounded-xl shadow-lg">
+                    <img src="../assets/seo-image.jpg" 
+                         alt="Website maintenance and SEO optimization process" 
+                         class="w-full h-auto rounded-lg object-cover">
+                </div>
+            </div>
+            
+            <!-- Content Column -->
+            <div class="space-y-6">
+                <div class="flex items-start bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex-shrink-0 bg-amber-100 p-2 rounded-lg mr-4">
+                        <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Security-First Maintenance</h3>
+                        <p class="text-gray-600">We prioritize protecting your site from vulnerabilities with proactive updates and monitoring.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex-shrink-0 bg-blue-100 p-2 rounded-lg mr-4">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Data-Driven Improvements</h3>
+                        <p class="text-gray-600">Our optimizations are based on real performance metrics and user behavior analytics.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex-shrink-0 bg-purple-100 p-2 rounded-lg mr-4">
+                        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Mobile & Google-First</h3>
+                        <p class="text-gray-600">We optimize for mobile experience and Google's Core Web Vitals as primary benchmarks.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex-shrink-0 bg-green-100 p-2 rounded-lg mr-4">
+                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Integrated SEO Lifecycle</h3>
+                        <p class="text-gray-600">SEO considerations are built into every stage of development and maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Improvement Facts + About the Service -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+  <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center md:text-left">Why It Matters</h3>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <!-- Stat Card 1 -->
+    <div class="bg-white p-6 rounded-lg shadow-sm text-center sm:text-left">
+      <p class="text-4xl font-bold text-purple-600 mb-2">67%</p>
+      <p class="text-gray-700">Sites with active SEO see 67% more traffic within 6 months of implementation.</p>
+    </div>
+
+    <!-- Stat Card 2 -->
+    <div class="bg-white p-6 rounded-lg shadow-sm text-center sm:text-left">
+      <p class="text-4xl font-bold text-blue-600 mb-2">3×</p>
+      <p class="text-gray-700">Regular maintenance can improve site speed by 3× and reduce security risks by 90%.</p>
+    </div>
+
+    <!-- Stat Card 3 -->
+    <div class="bg-white p-6 rounded-lg shadow-sm text-center sm:text-left">
+      <p class="text-4xl font-bold text-blue-500 mb-2">53%</p>
+      <p class="text-gray-700">of mobile users abandon a site if it takes more than 3 seconds to load.</p>
+    </div>
+
+    <!-- Stat Card 4 -->
+    <div class="bg-white p-6 rounded-lg shadow-sm text-center sm:text-left">
+      <p class="text-4xl font-bold text-purple-500 mb-2">88%</p>
+      <p class="text-gray-700">of online consumers are less likely to return after a bad experience.</p>
+    </div>
+  </div>
+</div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">What's Included</h3>
+                <div class="grid gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-purple-600 mb-3">Maintenance Services</h4>
+                        <ul class="space-y-4 text-gray-700">
+  <!-- Weekly backups -->
+  <li class="flex items-start">
+    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+    </svg>
+    <span>Weekly backups & security scans</span>
+  </li>
+
+  <!-- ✍️ Content Updates -->
+  <li class="flex items-start">
+  <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+    </svg>
+    <span>Content updates and blog posting support</span>
+  </li>
+
+  <!-- ⚡ Performance Optimization -->
+  <li class="flex items-start">
+  <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+    </svg>
+    <span>Performance tuning & site speed improvements</span>
+  </li>
+  <li class="flex items-start">
+  <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+    </svg>
+   <span>Priority Tech Support</span>
+  </li>
+</ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-blue-600 mb-3">SEO Services</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Monthly SEO audits & reports</span>
+                            </li>
+                            <!-- Add more items -->
+							<li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Monitor indexation issues (via Google Search Console)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Performance Audit Process -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-4xl mx-auto relative">
+    <!-- Vertical connection line -->
+    <div class="absolute left-[18px] top-4 bottom-24 w-0.5 bg-orange-200 hidden md:block"></div>
+
+    <div class="space-y-12 md:space-y-24">
+      <!-- Step 1 -->
+      <div class="flex items-start group animate-fade-in-up">
+        <div class="relative mr-6 md:mr-10">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+            1
+          </div>
+        </div>
+        <div class="flex-1 pt-1">
+          <h3 class="text-xl font-bold uppercase mb-4 bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+            PERFORMANCE AUDIT
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            We start by conducting a thorough audit of your website to identify performance bottlenecks...
+          </p>
+        </div>
+      </div>
+
+      <!-- Repeat similar structure for Steps 2-4 -->
+      <!-- Step 2 -->
+      <div class="flex items-start group animate-fade-in-up animation-delay-100">
+        <!-- Same structure as Step 1 with content for Step 2 -->
+<div class="relative mr-6 md:mr-10">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+            2
+          </div>
+        </div>
+        <div class="flex-1 pt-1">
+          <h3 class="text-xl font-bold uppercase mb-4 bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+            OPTIMIZATION STRATEGY
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Based on the findings of the performance audit, we develop a customized optimization strategy tailored to your website's specific needs and goals. This may involve optimizing code and scripts, minimizing server requests, leveraging browser caching, and optimizing images and multimedia content."
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex items-start group animate-fade-in-up animation-delay-200">
+        <!-- Same structure as Step 1 with content for Step 3 -->
+<div class="relative mr-6 md:mr-10">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+            3
+          </div>
+        </div>
+        <div class="flex-1 pt-1">
+          <h3 class="text-xl font-bold uppercase mb-4 bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+            IMPLEMENTATION & TESTING  
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            "Our team implements the recommended optimization strategies and conducts thorough testing to ensure that the changes result in measurable improvements in website performance. We monitor key performance metrics and fine-tune optimizations as needed to achieve optimal results."
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="flex items-start group animate-fade-in-up animation-delay-300">
+        <!-- Same structure as Step 1 with content for Step 4 -->
+        <div class="relative mr-6 md:mr-10">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+            4
+          </div>
+        </div>
+        <div class="flex-1 pt-1">
+          <h3 class="text-xl font-bold uppercase mb-4 bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+            CONTINUOUS MONITORING & MAINTENANCE  
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            "Website performance is an ongoing concern, and we provide continuous monitoring and maintenance to ensure that your website remains fast, reliable, and responsive over time. We proactively identify and address performance issues and implement updates and optimizations to keep your website running smoothly."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+	<!-- Next Article Navigation -->
+<section class="py-12 flex justify-center">
+  <div class="max-w-xl w-full border-2 rounded-xl p-5 bg-white shadow-sm relative overflow-hidden"
+       style="border-image: linear-gradient(to right, #7C3AED, #3B82F6) 1">
+    <div class="text-center">
+      <p class="text-sm text-gray-500 mb-1">Next Article</p>
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">
+        Learn about Web Design and Development
+      </h3>
+      <a href="/more/website-design-dev"
+         class="inline-block px-5 py-2 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium shadow-md hover:opacity-90 transition">
+        Read Next →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="bg-black text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+
+      <!-- Left Info -->
+      <div class="text-center md:text-left">
+        <p class="text-lg">© 2025 Fexa Digital</p>
+        <p class="text-sm mt-1">
+          Need a project? 
+          <a href="/index#get-in-touch" class="text-blue-400 hover:text-blue-500 underline-offset-2 hover:underline transition-colors duration-300">
+            Get in touch
+          </a>
+        </p>
+      </div>
+
+      <!-- Center Navigation -->
+      <nav class="flex flex-wrap justify-center gap-6 text-white text-sm">
+        <a href="/" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">Home</a>
+        <a href="/index#services" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">Services</a>
+        <a href="/website-quote" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">Request A Quote</a>
+        <a href="/index#faq" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">FAQ</a>
+        <a href="/privacy-policy" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">Privacy</a>
+      </nav>
+
+      <!-- Right Socials -->
+      <div class="flex gap-6">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/233549694956" target="_blank" aria-label="WhatsApp"
+          class="text-white transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M20.52 3.48A11.77 11.77 0 0012 0a11.84 11.84 0 00-10.3 17.81L0 24l6.37-1.66A11.77 11.77 0 0012 24h.01a11.85 11.85 0 008.51-20.52zM12 22a9.92 9.92 0 01-5.08-1.4l-.36-.22-3.78 1 1-3.66-.24-.37A9.96 9.96 0 1122 12a9.93 9.93 0 01-10 10zm5.21-7.39c-.29-.15-1.7-.84-1.96-.93s-.45-.15-.64.15-.74.93-.91 1.12-.34.22-.63.07a8.09 8.09 0 01-2.39-1.47 8.93 8.93 0 01-1.65-2.05c-.17-.3 0-.46.13-.6s.29-.34.44-.51a2.06 2.06 0 00.3-.49.53.53 0 00-.02-.51c-.07-.15-.64-1.55-.88-2.13s-.46-.47-.64-.48-.36 0-.56 0a1.08 1.08 0 00-.77.36A3.22 3.22 0 005 9.27a5.66 5.66 0 001.18 3.61c.15.2 2.28 3.5 5.54 4.91a13 13 0 001.34.49 3.84 3.84 0 001.78.11c.54-.08 1.7-.7 1.94-1.37s.24-1.24.17-1.37-.27-.2-.56-.35z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/fexadigital/" target="_blank" aria-label="Instagram"
+          class="text-white transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .2 2.5.4.6.2 1 .4 1.4.8.4.4.6.8.8 1.4.2.5.3 1.3.4 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 2-.4 2.5-.2.6-.4 1-.8 1.4-.4.4-.8.6-1.4.8-.5.2-1.3.3-2.5.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.2-2.5-.4-.6-.2-1-.4-1.4-.8-.4-.4-.6-.8-.8-1.4-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-2 .4-2.5.2-.6.4-1 .8-1.4.4-.4.8-.6 1.4-.8.5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.2 4.7.4 3.9.7c-.9.3-1.7.8-2.5 1.6C.6 3 0 3.9.7 5.2.4 6 0 7.1 0 8.4.1 9.7 0 10.1 0 12c0 1.9.1 2.3.1 3.6.1 1.3.4 2.4.7 3.2.3.9.8 1.7 1.6 2.5.8.8 1.6 1.3 2.5 1.6.8.3 1.9.6 3.2.7 1.3.1 1.7.1 3.6.1s2.3 0 3.6-.1c1.3-.1 2.4-.4 3.2-.7.9-.3 1.7-.8 2.5-1.6.8-.8 1.3-1.6 1.6-2.5.3-.8.6-1.9.7-3.2.1-1.3.1-1.7.1-3.6s0-2.3-.1-3.6c-.1-1.3-.4-2.4-.7-3.2-.3-.9-.8-1.7-1.6-2.5C20.3.6 19.5.1 18.6.7c-.8-.3-1.9-.6-3.2-.7C14.3 0 13.9 0 12 0zM12 5.8c-3.4 0-6.2 2.8-6.2 6.2S8.6 18.2 12 18.2s6.2-2.8 6.2-6.2S15.4 5.8 12 5.8zm0 10.3c-2.3 0-4.1-1.8-4.1-4.1S9.7 7.9 12 7.9s4.1 1.8 4.1 4.1-1.8 4.1-4.1 4.1zm6.4-11.9c0 .8-.7 1.4-1.4 1.4s-1.4-.6-1.4-1.4S16.2 2.8 17 2.8s1.4.6 1.4 1.4z"/>
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/fexadigital/" target="_blank" aria-label="GitHub"
+          class="text-white transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.438 9.77 8.205 11.363.6.112.82-.26.82-.577v-2.234c-3.338.727-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.755-1.333-1.755-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.24 1.84 1.24 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.76-1.605-2.665-.305-5.467-1.332-5.467-5.93 0-1.31.467-2.38 1.235-3.22-.124-.304-.535-1.528.117-3.184 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.005-.404c1.02.004 2.048.138 3.005.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.656.242 2.88.12 3.184.77.84 1.233 1.91 1.233 3.22 0 4.61-2.807 5.623-5.48 5.92.43.372.814 1.103.814 2.222v3.293c0 .32.218.694.825.576C20.565 22.27 24 17.79 24 12.5 24 5.87 18.63.5 12 .5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.visibility = 'visible';
+        entry.target.classList.add('animate-fade-in-up');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.group').forEach((element) => {
+    element.style.visibility = 'hidden';
+    observer.observe(element);
+  });
+});
+
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</BaseLayout>
+
+<style is:global>
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animation-delay-100 { animation-delay: 0.2s }
+.animation-delay-200 { animation-delay: 0.4s }
+.animation-delay-300 { animation-delay: 0.6s }
+        .gradient-text {
+            background: linear-gradient(90deg, #7C3AED 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+        }
+        .hover-underline {
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        .hover-underline:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .process-arrow {
+            position: relative;
+        }
+        .process-arrow::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7C3AED;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .process-arrow::after {
+                content: '↓';
+                right: 50%;
+                top: auto;
+                bottom: -30px;
+                transform: translateX(50%);
+            }
+            .comparison-table {
+                display: table;
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .comparison-row {
+                display: table-row;
+            }
+            .comparison-cell {
+                display: table-cell;
+                padding: 1rem;
+                border: 1px solid #e5e7eb;
+                vertical-align: top;
+            }
+            .comparison-header {
+                font-weight: bold;
+                background-color: #f9fafb;
+            }
+            .dual-column {
+                display: none;
+            }
+            /* Mobile nav styles */
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .comparison-table {
+                display: none;
+            }
+            .dual-column {
+                display: grid;
+            }
+            /* Hide mobile menu button on desktop */
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+        /* Navbar styles */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.visibility = 'visible';
+        entry.target.classList.add('animate-fade-in-up');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.group').forEach((element) => {
+    element.style.visibility = 'hidden';
+    observer.observe(element);
+  });
+});
+
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>

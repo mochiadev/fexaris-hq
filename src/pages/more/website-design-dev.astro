@@ -1,0 +1,472 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Website Design & Development | Fexa Digital"
+  
+  
+  canonical="https://fexadigital.com/more/website-design-dev"
+  hideHeader={true}
+  hideFooter={true}
+>
+  <!-- Fixed Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white shadow-md">
+  <div class="max-w-screen-xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo and Brand -->
+<div class="flex-shrink-0 flex items-center">
+  <a href="/" class="flex items-center">
+    <!-- Replace the src below with your actual logo path -->
+    <img src="../assets/fexalog.png" alt="Fexa Digital Logo"
+         class="h-10 w-auto object-contain" />
+  </a>
+  <div class="ml-2 leading-tight">
+    <span class="block text-xl font-bold text-black">FEXA DIGITAL</span>
+    <span class="block text-sm text-gray-500 tracking-wide">THE LAST WORD IN DIGITAL</span>
+  </div>
+</div>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8">
+        <a href="/" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">Home</a>
+        <a href="/index#services" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">Services</a>
+        <a href="/website-quote" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">Request A Quote</a>
+        <a href="/index#faq" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">FAQ</a>
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-gray-900 hover:text-indigo-600 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200">Home</a>
+      <a href="/index#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200">Services</a>
+       <a href="/website-quote" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200">Request A Quote</a>
+      <a href="/index#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50 transition-colors duration-200">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white" data-aos="fade">
+        <div class="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Website Design & Development</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+                Crafting digital experiences that captivate visitors and convert them into customers.
+            </p>
+            <a href="/website-quote" class="text-blue-400 hover:text-blue-500 underline-offset-2 hover:underline transition-colors duration-300">
+            <button class="bg-amber-400 text-gray-900 px-8 py-4 rounded-lg font-bold 
+                        hover:bg-amber-500 hover:scale-[1.03] hover:shadow-[0_0_25px_-5px_rgba(245,158,11,0.4)] 
+                        transition-all duration-300 mb-6">
+                Start Your Project
+            </button>
+          </a>
+        </div>
+    </section>
+
+    <!-- What Is Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 gradient-text">What Is Website Design & Development?</h2>
+            <div class="prose prose-lg text-gray-700">
+                <p>
+                    Website design focuses on creating visually appealing, user-friendly interfaces that reflect your brand identity. 
+                    Development brings these designs to life with clean, functional code that works across all devices.
+                </p>
+                <p>
+                    Together, they form the foundation of your digital presence - a strategic combination of aesthetics and 
+                    technology designed to engage visitors and achieve your business goals.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Our Approach</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 sm:space-y-6">
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-amber-100 p-2 rounded-lg mr-4">
+                                <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">User-First Design</h3>
+                                <p class="text-gray-600">Every design decision starts with your target audience's needs and behaviors.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-purple-100 p-2 rounded-lg mr-4">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2H3V4zM3 8h18v11a1 1 0 01-1 1H4a1 1 0 01-1-1V8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Strategic Discovery</h3>
+                                <p class="text-gray-600">We begin with in-depth consultations to align your business goals with the ideal digital experience.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 p-2 rounded-lg mr-4">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Responsive & Scalable Build</h3>
+                                <p class="text-gray-600">Our sites adapt across devices and are built to grow with your business using scalable frameworks.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-green-100 p-2 rounded-lg mr-4">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Seamless User Experience</h3>
+                                <p class="text-gray-600">Navigation and flow are built to feel natural, intuitive, and drive user actions without friction.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-orange-100 p-2 rounded-lg mr-4">
+                                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5h6M9 19h6M5 9v6M19 9v6M7 7h10v10H7V7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Cutting-Edge Integrations</h3>
+                                <p class="text-gray-600">We implement modern tools, CMS, APIs, and third-party services to give your site full functionality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <img src="../assets/approach.png" alt="Design process" class="rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Improvement Facts -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Why It Matters</h3>
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-5xl font-bold text-purple-600 mb-2">200%</p>
+                        <p class="text-gray-700">Studies have shown that businesses with a well-designed website can experience up to a 200% increase in conversions, underscoring the importance of investing in professional website design and development services.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">What's Included</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Custom UI/UX Design</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Responsive Development</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">SEO Optimization</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">Performance Optimization</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Blueprint Process -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50" id='blueprint'>
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center gradient-text mb-16" data-aos="fade-up">Our Web Blueprint Process</h2>
+
+            <div class="process-timeline max-w-3xl mx-auto">
+                <!-- Step 1 -->
+                <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Consultation & Discovery</h3>
+                    <p class="text-gray-600">We begin by understanding your goals, target audience, and design preferences to guide the project.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step" data-aos="fade-right" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Wireframing & Prototyping</h3>
+                    <p class="text-gray-600">Blueprints and interactive prototypes are created to visualize your website's layout and structure.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Design & Development</h3>
+                    <p class="text-gray-600">We bring your vision to life through clean coding and responsive design across all major devices and browsers.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step" data-aos="fade-right" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Content Integration</h3>
+                    <p class="text-gray-600">We incorporate your visuals, copy, and multimedia in a way that enhances flow, messaging, and engagement.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="process-step" data-aos="fade-right" data-aos-delay="500">
+                    <div class="step-number">5</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Testing & QA</h3>
+                    <p class="text-gray-600">We thoroughly test for bugs, usability issues, performance, accessibility, and browser compatibility.</p>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="process-step" data-aos="fade-right" data-aos-delay="600">
+                    <div class="step-number">6</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Launch & Optimization</h3>
+                    <p class="text-gray-600">Your website goes live! We then monitor, optimize, and iterate based on data and user feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	
+
+    <!-- Final CTA -->
+    <section class="gradient-cta text-white py-20 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Elevate Your Online Presence?</h2>
+            
+           <a href="/website-quote" class="text-blue-400 hover:text-blue-500 underline-offset-2 hover:underline transition-colors duration-300">
+            <button class="bg-amber-400 text-gray-900 px-8 py-4 rounded-lg font-bold 
+                        hover:bg-amber-500 hover:scale-[1.03] hover:shadow-[0_0_25px_-5px_rgba(245,158,11,0.4)] 
+                        transition-all duration-300 mb-6">
+                Start Your Project
+            </button>
+          </a>
+			
+        </div>
+    </section>
+
+	<!-- Next Article Navigation -->
+<section class="py-12 flex justify-center">
+  <div class="max-w-xl w-full border-2 rounded-xl p-5 bg-white shadow-sm relative overflow-hidden"
+       style="border-image: linear-gradient(to right, #7C3AED, #3B82F6) 1">
+    <div class="text-center">
+      <p class="text-sm text-gray-500 mb-1">Next Article</p>
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">
+        Website vs Web App: What Does Your Business Really Need?
+      </h3>
+      <a href="/more/website-vs-web-app"
+         class="inline-block px-5 py-2 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium shadow-md hover:opacity-90 transition">
+        Learn more →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-black text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+
+      <!-- Left Info -->
+      <div class="text-center md:text-left">
+        <p class="text-lg">© 2025 Fexa Digital</p>
+        <p class="text-sm mt-1">
+          Need a project? 
+          <a href="/index#get-in-touch" class="text-blue-400 hover:text-blue-500 underline-offset-2 hover:underline transition-colors duration-300">
+            Get in touch
+          </a>
+        </p>
+      </div>
+
+      <!-- Center Navigation -->
+      <nav class="flex flex-wrap justify-center gap-6 text-white text-sm">
+        <a href="/" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">Home</a>
+        <a href="/index#services" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">Services</a>
+         <a href="/website-quote" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">Request A Quote</a>
+        <a href="/index#faq" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">FAQ</a>
+        <a href="/privacy-policy" class="no-underline hover:underline underline-offset-4 transition-transform duration-300 transform hover:scale-105">Privacy</a>
+      </nav>
+
+      <!-- Right Socials -->
+      <div class="flex gap-6">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/233549694956" target="_blank" aria-label="WhatsApp"
+          class="text-white transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M20.52 3.48A11.77 11.77 0 0012 0a11.84 11.84 0 00-10.3 17.81L0 24l6.37-1.66A11.77 11.77 0 0012 24h.01a11.85 11.85 0 008.51-20.52zM12 22a9.92 9.92 0 01-5.08-1.4l-.36-.22-3.78 1 1-3.66-.24-.37A9.96 9.96 0 1122 12a9.93 9.93 0 01-10 10zm5.21-7.39c-.29-.15-1.7-.84-1.96-.93s-.45-.15-.64.15-.74.93-.91 1.12-.34.22-.63.07a8.09 8.09 0 01-2.39-1.47 8.93 8.93 0 01-1.65-2.05c-.17-.3 0-.46.13-.6s.29-.34.44-.51a2.06 2.06 0 00.3-.49.53.53 0 00-.02-.51c-.07-.15-.64-1.55-.88-2.13s-.46-.47-.64-.48-.36 0-.56 0a1.08 1.08 0 00-.77.36A3.22 3.22 0 005 9.27a5.66 5.66 0 001.18 3.61c.15.2 2.28 3.5 5.54 4.91a13 13 0 001.34.49 3.84 3.84 0 001.78.11c.54-.08 1.7-.7 1.94-1.37s.24-1.24.17-1.37-.27-.2-.56-.35z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/fexadigital/" target="_blank" aria-label="Instagram"
+          class="text-white transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .2 2.5.4.6.2 1 .4 1.4.8.4.4.6.8.8 1.4.2.5.3 1.3.4 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 2-.4 2.5-.2.6-.4 1-.8 1.4-.4.4-.8.6-1.4.8-.5.2-1.3.3-2.5.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.2-2.5-.4-.6-.2-1-.4-1.4-.8-.4-.4-.6-.8-.8-1.4-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-2 .4-2.5.2-.6.4-1 .8-1.4.4-.4.8-.6 1.4-.8.5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.2 4.7.4 3.9.7c-.9.3-1.7.8-2.5 1.6C.6 3 0 3.9.7 5.2.4 6 0 7.1 0 8.4.1 9.7 0 10.1 0 12c0 1.9.1 2.3.1 3.6.1 1.3.4 2.4.7 3.2.3.9.8 1.7 1.6 2.5.8.8 1.6 1.3 2.5 1.6.8.3 1.9.6 3.2.7 1.3.1 1.7.1 3.6.1s2.3 0 3.6-.1c1.3-.1 2.4-.4 3.2-.7.9-.3 1.7-.8 2.5-1.6.8-.8 1.3-1.6 1.6-2.5.3-.8.6-1.9.7-3.2.1-1.3.1-1.7.1-3.6s0-2.3-.1-3.6c-.1-1.3-.4-2.4-.7-3.2-.3-.9-.8-1.7-1.6-2.5C20.3.6 19.5.1 18.6.7c-.8-.3-1.9-.6-3.2-.7C14.3 0 13.9 0 12 0zM12 5.8c-3.4 0-6.2 2.8-6.2 6.2S8.6 18.2 12 18.2s6.2-2.8 6.2-6.2S15.4 5.8 12 5.8zm0 10.3c-2.3 0-4.1-1.8-4.1-4.1S9.7 7.9 12 7.9s4.1 1.8 4.1 4.1-1.8 4.1-4.1 4.1zm6.4-11.9c0 .8-.7 1.4-1.4 1.4s-1.4-.6-1.4-1.4S16.2 2.8 17 2.8s1.4.6 1.4 1.4z"/>
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/fexadigital/" target="_blank" aria-label="GitHub"
+          class="text-white transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.438 9.77 8.205 11.363.6.112.82-.26.82-.577v-2.234c-3.338.727-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.755-1.333-1.755-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.24 1.84 1.24 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.76-1.605-2.665-.305-5.467-1.332-5.467-5.93 0-1.31.467-2.38 1.235-3.22-.124-.304-.535-1.528.117-3.184 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.005-.404c1.02.004 2.048.138 3.005.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.656.242 2.88.12 3.184.77.84 1.233 1.91 1.233 3.22 0 4.61-2.807 5.623-5.48 5.92.43.372.814 1.103.814 2.222v3.293c0 .32.218.694.825.576C20.565 22.27 24 17.79 24 12.5 24 5.87 18.63.5 12 .5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" is:inline></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out',
+            once: true,
+            offset: 120
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('scrolled');
+            }
+        });
+    </script>
+</BaseLayout>
+
+<style is:global>
+.gradient-text {
+            background: linear-gradient(90deg, #7C3AED 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #4C1D95 0%, #1E40AF 100%);
+        }
+        .gradient-cta {
+            background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%);
+        }
+        .process-step {
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        
+        /* Custom process timeline styling */
+        .process-timeline {
+            position: relative;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1.25rem; /* Align with circle center */
+            width: 4px;
+            background: linear-gradient(to bottom, #7C3AED, #3B82F6);
+            z-index: 1;
+        }
+        .process-step {
+            position: relative;
+            padding-left: 3.5rem;
+            margin-bottom: 3rem;
+            z-index: 2;
+        }
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: #7C3AED;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            z-index: 3;
+        }
+        
+        /* Navbar styles */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .hover-underline {
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        .hover-underline:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+</style>

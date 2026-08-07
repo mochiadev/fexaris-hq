@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Purchase</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/ico-fexa.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .summary-modal {
+            transform: translateY(100%);
+            transition: transform 0.3s ease-out;
+        }
+        .summary-modal.active {
+            transform: translateY(0);
+        }
+        .backdrop {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .backdrop.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .coupon-input {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .coupon-input.active {
+            max-height: 100px;
+            margin-top: 0.5rem;
+        }
+        .coupon-success {
+            color: #10B981;
+        }
+        .coupon-error {
+            color: #EF4444;
+        }
+        /* Toggle switch styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #8B5CF6;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #8B5CF6;
+        }
+		
+		    /* Error Notification Styles */
+    .payment-notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #fff;
+        color: #ef4444;
+        padding: 16px 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+        transform: translateX(150%);
+        transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        border-left: 4px solid #ef4444;
+    }
+    
+    .payment-notification.visible {
+        transform: translateX(0);
+    }
+    
+    .payment-notification.success {
+        color: #10b981;
+        border-left-color: #10b981;
+    }
+    
+    .notification-icon {
+        margin-right: 12px;
+        font-size: 20px;
+    }
+    
+    .notification-close {
+        margin-left: 16px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+    
+    .notification-close:hover {
+        opacity: 1;
+    }
+    
+    @keyframes slideIn {
+        from { transform: translateX(150%); }
+        to { transform: translateX(0); }
+    }
+    
+    @keyframes slideOut {
+        from { transform: translateX(0); }
+        to { transform: translateX(150%); }
+    }
+	
+ body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f4ff 100%);
+            overflow-x: hidden;
+        }
+        
+        .nav-blend {
+            background: linear-gradient(135deg, rgba(250, 250, 250, 0.9) 0%, rgba(240, 244, 255, 0.9) 100%);
+            border-bottom: 1px solid rgba(224, 231, 255, 0.5);
+        }
+        
+        .logo-gradient {
+            background: linear-gradient(90deg, #7c3aed, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo-container {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+        }
+        
+        .back-arrow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .back-arrow:hover {
+            transform: translateX(-4px);
+        }
+        
+        .back-arrow-text {
+            transition: opacity 0.2s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        
+        .back-arrow:hover .back-arrow-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+		
+		@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+button {
+  transition: opacity 0.2s ease;
+}
+button:disabled {
+  opacity: 0.8;
+}
+    </style>
+</head>
+<body>
+<!-- Page Loader -->
+<div id="page-loader" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center transition-opacity duration-500">
+  <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-purple-600 border-opacity-50"></div>
+</div>
+
+
+    <!-- Navbar-->
+    <div class="w-full">
+        <nav class="nav-blend w-full py-5 px-6">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Logo & Company Name -->
+				<a href="./index.html">
+                <div class="flex items-center space-x-3">
+                    <div class="logo-container w-10 h-10 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                        <img src="./assets/transfexalog.png"></img>
+                    </div>
+                    <span class="text-xl font-bold logo-gradient">FEXA DIGITAL</span>
+                </div></a>
+                
+                <!-- Back arrow to pricing -->
+                <a href="./pricing.html" class="back-arrow flex items-center group">
+                    <span class="back-arrow-text text-gray-600 font-medium mr-2 group-hover:text-purple-600">Back to Pricing</span>
+                    <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:bg-purple-50 group-hover:shadow-md transition-all border border-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-hover:text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </div>
+	    <!-- End of Navbar-->
+	
+    <div class="container mx-auto px-4 py-6 max-w-6xl">
+        <div class="flex flex-col md:flex-row gap-6">
+            <!-- Left Panel - Checkout Form (Redesigned) -->
+            <div class="w-full md:w-7/12 bg-white rounded-xl shadow-sm p-5">
+                <!-- Plan Display (Compact) -->
+                <div class="mb-6 p-4 bg-purple-50 rounded-lg border border-purple-100" id="pricingContainer">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-semibold text-purple-700 uppercase tracking-wide" id="plan-badge">Loading Plan...</span>
+                            <h3 class="text-lg font-semibold text-gray-800 mt-1" id="plan-title">Loading Description...</h3>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-purple-600">Loading Price...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="space-y-5">
+                    <!-- Payment Structure -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Payment Structure</label>
+                        <select id="payment-structure" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white">
+                            <option value="full">Full Payment</option>
+                            <option value="half">Half Now + Monthly</option>
+                            <option value="spread">3-Month Spread</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Email Input -->
+                    <div class="mb-20 pb-8 pl-4 pr-5">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                            </div>
+                            <input type="email" id="email" required class="block w-full pl-10 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="your@email.com">
+                        </div>
+                    </div>
+					<div></div>
+                </div>
+                
+                <!-- Mobile Amount Display -->
+                <div class="mt-6 md:hidden bg-white border-t border-gray-200 fixed bottom-0 left-0 right-0 p-4 shadow-lg">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-sm text-gray-600">Total due now</p>
+                            <p class="text-lg font-bold text-purple-600" id="mobile-charge-now">US$0.00</p>
+                        </div>
+                        <button id="mobile-summary-toggle" class="bg-purple-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-purple-700 transition">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel - Order Summary (Desktop) -->
+            <div class="w-full md:w-5/12 hidden md:block">
+                <div class="bg-white rounded-xl shadow-sm p-6 sticky top-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-5">Order Summary</h2>
+                    
+                    <!-- Charge Now Section -->
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <span class="font-medium">Charge Now</span>
+                            <span class="font-bold text-purple-600" id="charge-now">US$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Cycles Section -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-gray-700 mb-3">Cycles</h3>
+                        <div id="cycles-details" class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Initial Pay</span>
+                                <div class="flex items-center">
+                                    <span class="line-through text-gray-400 text-sm mr-2" id="prev-initial">US$0.00</span>
+                                    <span class="font-medium text-gray-800" id="initial-price">US$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Divider -->
+                    <div class="border-t border-gray-200 my-4"></div>
+                    
+                    <!-- Coupon Code Section -->
+                    <div class="mb-4">
+                        <button id="apply-coupon-btn" class="text-purple-600 text-sm font-medium flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                            Have a coupon code?
+                        </button>
+                        <div id="coupon-input" class="coupon-input mt-2">
+                            <div class="flex">
+                                <input type="text" id="coupon-code" placeholder="Enter code" class="flex-1 p-2.5 border border-gray-300 rounded-l-lg focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+                                <button id="submit-coupon" class="bg-purple-600 text-white px-4 py-2.5 rounded-r-lg hover:bg-purple-700 transition">Apply</button>
+                            </div>
+                            <p id="coupon-message" class="text-sm mt-1.5"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Divider -->
+                    <div class="border-t border-gray-200 my-4"></div>
+                    
+                    <!-- Subtotal -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Subtotal</span>
+                            <div class="text-right">
+                                <span class="line-through text-gray-400 text-sm mr-2" id="summary-subtotal-original">US$0.00</span>
+                                <span class="font-bold text-purple-600" id="summary-subtotal-discounted">US$0.00</span>
+                            </div>
+                        </div>
+                        <div id="coupon-discount" class="flex justify-between hidden">
+                            <span class="text-sm text-gray-600">Coupon discount</span>
+                            <span class="text-sm text-green-600" id="coupon-discount-amount">-$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Continue Button -->
+                    <button id="continue-button" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-lg mt-6 transition">
+                        Continue to Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Summary Modal -->
+    <div id="backdrop" class="backdrop fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+    <div id="summary-modal" class="summary-modal fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-lg z-50 max-h-[80vh] overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">Order Summary</h2>
+                <button id="close-summary" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Charge Now Section -->
+            <div class="mb-4">
+                <div class="flex justify-between">
+                    <span class="font-medium">Charge Now</span>
+                    <span class="font-bold text-purple-600" id="mobile-charge-now-summary">US$0.00</span>
+                </div>
+            </div>
+            
+            <!-- Cycles Section -->
+            <div class="mb-6">
+                <h3 class="font-semibold text-gray-700 mb-2">Cycles</h3>
+                <div id="mobile-cycles-details">
+                    <div class="flex justify-between py-1">
+                        <span class="text-gray-600">Initial Pay</span>
+                        <span class="text-gray-600">US$0.00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coupon Code Section -->
+            <div class="border-t border-gray-200 pt-4 mb-4">
+                <button id="mobile-apply-coupon-btn" class="text-purple-600 text-sm font-medium">Have a coupon code?</button>
+                <div id="mobile-coupon-input" class="coupon-input">
+                    <div class="flex mt-2">
+                        <input type="text" id="mobile-coupon-code" placeholder="Enter coupon code" class="flex-1 p-2 border border-gray-300 rounded-l-md focus:ring-purple-500 focus:border-purple-500">
+                        <button id="mobile-submit-coupon" class="bg-purple-600 text-white px-4 py-2 rounded-r-md hover:bg-purple-700">Apply</button>
+                    </div>
+                    <p id="mobile-coupon-message" class="text-sm mt-1"></p>
+                </div>
+            </div>
+            
+            <!-- Subtotal -->
+            <div class="border-t border-gray-200 pt-4">
+                <div class="flex justify-between">
+                    <span class="font-semibold">Subtotal</span>
+                    <div class="text-right">
+                        <span class="line-through text-gray-400" id="mobile-summary-subtotal-original">US$0.00</span>
+                        <span class="font-bold text-purple-600 ml-2" id="mobile-summary-subtotal-discounted">US$0.00</span>
+                    </div>
+                </div>
+                <div id="mobile-coupon-discount" class="flex justify-between mt-1 hidden">
+                    <span class="text-sm text-gray-600">Coupon discount</span>
+                    <span class="text-sm text-green-600" id="mobile-coupon-discount-amount">-$0.00</span>
+                </div>
+            </div>
+            
+            <!-- Continue Button -->
+            <button id="mobile-continue-button" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-md mt-6 mb-4 transition duration-150">
+                Continue
+            </button>
+        </div>
+    </div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+function createAndShowModal(email) {
+  // Create modal container
+  const modal = document.createElement('div');
+  modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50';
+  modal.style.backdropFilter = 'blur(4px)';
+  
+  // Modal content
+  modal.innerHTML = `
+    <div class="bg-white rounded-xl max-w-md w-full p-6 shadow-2xl transform transition-all duration-300 scale-95 animate-scaleIn">
+      <div class="text-center">
+        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
+          <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">Payment Confirmed!</h3>
+        <p class="text-gray-600 mb-4">
+          We've sent the next steps to <span class="font-semibold text-purple-600">${email}</span>
+        </p>
+        
+        <div class="bg-purple-50 rounded-lg p-4 mb-6 text-left">
+          <div class="flex items-start">
+            <svg class="h-5 w-5 text-purple-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <h4 class="font-medium text-gray-900">Check your inbox</h4>
+              <p class="text-sm text-gray-600">You'll find your receipt and project onboarding details</p>
+            </div>
+          </div>
+        </div>
+        
+        <button id="modalOkButton" class="w-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium py-3 px-4 rounded-lg hover:from-purple-700 hover:to-blue-600 transition-colors">
+          Okay, Got It!
+        </button>
+      </div>
+    </div>
+  `;
+
+  // Add to DOM
+  document.body.appendChild(modal);
+
+  // Animation
+  setTimeout(() => {
+    modal.querySelector('.animate-scaleIn').classList.remove('scale-95');
+  }, 10);
+
+  // Handle OK button click
+  const okButton = modal.querySelector('#modalOkButton');
+  okButton.addEventListener('click', () => {
+    // Animation out
+    modal.querySelector('.animate-scaleIn').classList.add('scale-95');
+    modal.style.opacity = '0';
+    modal.style.transition = 'opacity 0.2s ease';
+    
+    setTimeout(() => {
+      document.body.removeChild(modal);
+      document.body.style.overflow = '';
+      // Redirect to thank you page or dashboard
+      window.location.href = './getting-started.html';
+    }, 200);
+  });
+}
+
+// Add animation styles if not already present
+if (!document.getElementById('modal-animation-styles')) {
+  const style = document.createElement('style');
+  style.id = 'modal-animation-styles';
+  style.textContent = `
+    @keyframes scaleIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .animate-scaleIn {
+      animation: scaleIn 0.3s ease-out forwards;
+    }
+    #page-loader {
+      transition: opacity 0.5s ease;
+    }
+  `;
+  document.head.appendChild(style);
+}
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Payment configuration
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbwaRMVgkO3FHnY9721CbZUMvrytGVRViQUK-P0UaafqcmCqls8leIMq89ShJz_hGsuC/exec'
+        const SHEET_ID = '1PtMuR4M34GUeDsASBXdVyhefbZRcwB4I0EOtwOxVJfs';
+        const PAYMENT_SHEET_NAME = 'Payments';
+
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan') || 'startup';
+        const amt = urlParams.get('amt') ? atob(urlParams.get('amt')) : '250';
+        const recur = urlParams.get('recur') ? atob(urlParams.get('recur')) : '120';
+        const currency = urlParams.get('currency') || 'USD';
+
+        
+        // Enhanced currency formatting
+        const currencyFormats = {
+            'USD': { symbol: '$', decimal: 2, thousand: ',' },
+            'GHS': { symbol: '₵', decimal: 2, thousand: ',' },
+            'EUR': { symbol: '€', decimal: 2, thousand: '.' }
+        };
+        
+        const formatMoney = (amount, curr = currency) => {
+    const format = currencyFormats[curr] || currencyFormats['USD'];
+    const value = parseFloat(amount).toFixed(format.decimal);
+    return `${format.symbol}${value.replace(/\d(?=(\d{3})+\.)/g, '$&,')}`;
+};
+
+        // DOM Elements
+        const elements = {
+            planBadge: document.getElementById('plan-badge'),
+            planTitle: document.getElementById('plan-title'),
+            pricingContainer: document.getElementById('pricingContainer'),
+            chargeNow: document.getElementById('charge-now'),
+            mobileChargeNow: document.getElementById('mobile-charge-now'),
+            mobileChargeNowSummary: document.getElementById('mobile-charge-now-summary'),
+            paymentStructure: document.getElementById('payment-structure'),
+            emailInput: document.getElementById('email'),
+            continueButton: document.getElementById('continue-button'),
+            mobileContinueButton: document.getElementById('mobile-continue-button'),
+            cyclesDetails: document.getElementById('cycles-details'),
+            mobileCyclesDetails: document.getElementById('mobile-cycles-details'),
+            summarySubtotalOriginal: document.getElementById('summary-subtotal-original'),
+            summarySubtotalDiscounted: document.getElementById('summary-subtotal-discounted'),
+            mobileSummarySubtotalOriginal: document.getElementById('mobile-summary-subtotal-original'),
+            mobileSummarySubtotalDiscounted: document.getElementById('mobile-summary-subtotal-discounted'),
+            couponElements: {
+                applyBtn: document.getElementById('apply-coupon-btn'),
+                input: document.getElementById('coupon-input'),
+                code: document.getElementById('coupon-code'),
+                submit: document.getElementById('submit-coupon'),
+                message: document.getElementById('coupon-message'),
+                discount: document.getElementById('coupon-discount'),
+                discountAmount: document.getElementById('coupon-discount-amount')
+            },
+            mobileCouponElements: {
+                applyBtn: document.getElementById('mobile-apply-coupon-btn'),
+                input: document.getElementById('mobile-coupon-input'),
+                code: document.getElementById('mobile-coupon-code'),
+                submit: document.getElementById('mobile-submit-coupon'),
+                message: document.getElementById('mobile-coupon-message'),
+                discount: document.getElementById('mobile-coupon-discount'),
+                discountAmount: document.getElementById('mobile-coupon-discount-amount')
+            },
+            modal: {
+                toggle: document.getElementById('mobile-summary-toggle'),
+                element: document.getElementById('summary-modal'),
+                backdrop: document.getElementById('backdrop'),
+                close: document.getElementById('close-summary')
+            }
+        };
+
+        // State management
+        const state = {
+            currentDiscount: 0,
+            currentDiscountType: '',
+            currentDiscountValue: 0,
+            originalSubtotal: 0,
+            finalAmount: parseFloat(amt),
+            appliedCoupons: new Set(), // Track applied coupons to prevent reuse
+            paymentPlans: {
+                startup: {
+                    heading: "Startup Plan",
+                    title: "For entrepreneurs ready to launch fast",
+                    description: "Perfect for new businesses with essential features to get started",
+                    features: ["Premium Website", "Basic SEO", "Chat Widget","Mobile responsive"]
+                },
+
+                businesspro: {
+                    heading: "Business Pro",
+                    title: "Premium solutions for growing businesses",
+                    description: "Enhanced features for business ready to scale",
+                    features: ["Full Payment Integration", "Advanced SEO", "Lead Generation", "Analytics"]
+                },
+                enterprise: {
+                    heading: "Enterprise Suite",
+                    title: "Advanced solutions for matured business with efficient control",
+                    description: "Custom solutions for complex business needs",
+                    features: ["Unlimited pages", "Priority support", "AI Automations", "Dedicated manager"]
+                },
+                cmklite: {
+                    heading: "Client Magnet Kit (Lite)",
+                    title: "Essential online presence for entrepreneurs",
+                    description: "Simple, professional, and ready to launch — self-managed with premium design.",
+                    features: ["Booking System", "Smart Social Widget", "Mobile Responsive"]
+                },
+				cmkpro: {
+                    heading: "Client Magnet Kit (Pro)",
+                    title: "Affordable professional website",
+                    description: "Budget-friendly option with professional quality- Self Managed",
+                    features: ["Digital Storefront + Online Payments", "Advanced SEO", "Social media integration","Integrated Booking"]
+                },
+                ecommercesuite: {
+                    heading: "E-commerce Suite",
+                    title: "Complete online store solution",
+                    description: "Everything you need to sell online with advanced features",
+                    features: ["Product Management", "Payment Gateway", "Inventory Tracking", "Order Management", "Shipping Integration"]
+                },
+                enterprisesuite: {
+                    heading: "Enterprise Suite",
+                    title: "Enterprise-grade solutions for large businesses",
+                    description: "Scalable solutions with advanced features and dedicated support",
+                    features: ["Custom Development", "API Integration", "Advanced Analytics", "Dedicated Support", "White-label Options"]
+                }
+            },
+            validCoupons: {
+                'SAVE10': { type: 'percentage', value: 10, message: '10% discount applied!' },
+                'FEXA20': { type: 'percentage', value: 20, message: '20% discount applied!' },
+                'LOYALFX': { type: 'percentage', value: 15, message: 'Welcome discount applied!' }
+            }
+        };
+
+        /* ======================
+           ENHANCED UI COMPONENTS
+           ====================== */
+        
+        // Create modern payment cycle card
+        const createCycleCard = (title, amount, isHighlighted = false) => {
+            const card = document.createElement('div');
+            card.className = `cycle-card ${isHighlighted ? 'highlighted' : ''}`;
+            card.innerHTML = `
+                <div class="cycle-card-inner">
+                    <div class="cycle-header">
+                        <span class="cycle-title">${title}</span>
+                        ${isHighlighted ? '<span class="cycle-badge">Now</span>' : ''}
+                    </div>
+                    <div class="cycle-amount">${formatMoney(amount)}</div>
+                    <div class="cycle-progress"></div>
+                </div>
+            `;
+            return card;
+        };
+
+        // Create feature pill
+        const createFeaturePill = (text) => {
+            const pill = document.createElement('span');
+            pill.className = 'feature-pill';
+            pill.textContent = text;
+            return pill;
+        };
+
+        /* ======================
+           CORE FUNCTIONALITY
+           ====================== */
+        
+        // Initialize the page
+        const initPage = () => {
+            // Set up plan display
+            const planData = state.paymentPlans[plan];
+            if (planData) {
+                elements.planBadge.textContent = planData.heading;
+                elements.planTitle.textContent = planData.title;
+                
+                // Enhanced pricing display
+                elements.pricingContainer.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-semibold text-purple-700 uppercase tracking-wide">${planData.heading}</span>
+                            <h3 class="text-lg font-semibold text-gray-800 mt-1">${planData.title}</h3>
+                            <div class="feature-pills mt-2">
+                                ${planData.features.map(f => `<span class="feature-pill">${f}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-purple-600">${formatMoney(amt)}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Initial update
+            updateSummary();
+        };
+
+        // Set up all event listeners
+        const setupEventListeners = () => {
+            // Payment controls
+            elements.paymentStructure.addEventListener('change', updateSummary);
+            
+            // Coupons
+            elements.couponElements.applyBtn.addEventListener('click', toggleCouponInput);
+            elements.mobileCouponElements.applyBtn.addEventListener('click', toggleCouponInput);
+            elements.couponElements.submit.addEventListener('click', applyCoupon);
+            elements.mobileCouponElements.submit.addEventListener('click', applyCoupon);
+            
+            // Modal
+            elements.modal.toggle.addEventListener('click', openSummaryModal);
+            elements.modal.close.addEventListener('click', closeSummaryModal);
+            elements.modal.backdrop.addEventListener('click', closeSummaryModal);
+            
+            // Payment buttons
+            elements.continueButton.addEventListener('click', initiatePayment);
+            if (elements.mobileContinueButton) {
+                elements.mobileContinueButton.addEventListener('click', initiatePayment);
+            }
+        };
+
+        // Toggle coupon input
+        const toggleCouponInput = (e) => {
+            const isMobile = e.target.id === 'mobile-apply-coupon-btn';
+            const couponUI = isMobile ? elements.mobileCouponElements : elements.couponElements;
+            
+            couponUI.input.classList.toggle('active');
+            couponUI.message.textContent = '';
+            
+            // Focus on input when shown
+            if (couponUI.input.classList.contains('active')) {
+                setTimeout(() => couponUI.code.focus(), 100);
+            }
+        };
+
+        // Apply coupon
+        const applyCoupon = () => {
+            const couponCode = elements.couponElements.code.value || elements.mobileCouponElements.code.value;
+            const isMobile = !!elements.mobileCouponElements.code.value;
+            const couponUI = isMobile ? elements.mobileCouponElements : elements.couponElements;
+            
+            if (!couponCode) {
+                showCouponMessage('Please enter a coupon code', 'error', isMobile);
+                return;
+            }
+            
+            const upperCouponCode = couponCode.toUpperCase();
+            
+            // Check if coupon has already been applied
+            if (state.appliedCoupons.has(upperCouponCode)) {
+                showCouponMessage('This coupon has already been applied', 'error', isMobile);
+                return;
+            }
+            
+            if (state.validCoupons[upperCouponCode]) {
+                const coupon = state.validCoupons[upperCouponCode];
+                state.currentDiscountType = coupon.type;
+                state.currentDiscountValue = coupon.value;
+                
+                // Add to applied coupons to prevent reuse
+                state.appliedCoupons.add(upperCouponCode);
+                
+                showCouponMessage(coupon.message, 'success', isMobile);
+                couponUI.discount.classList.remove('hidden');
+                calculateDiscount();
+                
+                // Disable coupon input after successful application
+                couponUI.code.disabled = true;
+                couponUI.submit.disabled = true;
+                if (isMobile) {
+                    elements.mobileCouponElements.code.disabled = true;
+                    elements.mobileCouponElements.submit.disabled = true;
+                } else {
+                    elements.couponElements.code.disabled = true;
+                    elements.couponElements.submit.disabled = true;
+                }
+            } else {
+                showCouponMessage('Invalid coupon code', 'error', isMobile);
+                resetDiscount();
+            }
+        };
+
+        // Show coupon message
+        const showCouponMessage = (message, type, isMobile = false) => {
+            const couponUI = isMobile ? elements.mobileCouponElements : elements.couponElements;
+            couponUI.message.textContent = message;
+            couponUI.message.className = `text-sm mt-1 coupon-${type}`;
+        };
+
+        // Calculate discount
+        const calculateDiscount = () => {
+            if (state.currentDiscountType === 'percentage') {
+                state.currentDiscount = state.finalAmount * (state.currentDiscountValue / 100);
+            } else if (state.currentDiscountType === 'fixed') {
+                state.currentDiscount = state.currentDiscountValue;
+            }
+            
+            // Update discount display
+            elements.couponElements.discountAmount.textContent = `-${formatMoney(state.currentDiscount)}`;
+            elements.mobileCouponElements.discountAmount.textContent = `-${formatMoney(state.currentDiscount)}`;
+            
+            // Update subtotal
+            const discountedSubtotal = state.finalAmount - state.currentDiscount;
+            state.finalAmount = discountedSubtotal;
+            updateSubtotalDisplay(discountedSubtotal);
+        };
+
+        // Reset discount
+        const resetDiscount = () => {
+            state.currentDiscount = 0;
+            state.currentDiscountType = '';
+            state.currentDiscountValue = 0;
+            
+            elements.couponElements.discount.classList.add('hidden');
+            elements.mobileCouponElements.discount.classList.add('hidden');
+            
+            updateSubtotalDisplay(state.originalSubtotal);
+        };
+
+        // Update subtotal display
+        const updateSubtotalDisplay = (amount) => {
+            elements.summarySubtotalDiscounted.textContent = formatMoney(amount);
+            elements.mobileSummarySubtotalDiscounted.textContent = formatMoney(amount);
+            elements.chargeNow.textContent = formatMoney(amount);
+            elements.mobileChargeNow.textContent = formatMoney(amount);
+            elements.mobileChargeNowSummary.textContent = formatMoney(amount);
+            
+            // Calculate and display the original price (20% more than final amount)
+            const originalPrice = amount * 1.2;
+            elements.summarySubtotalOriginal.textContent = formatMoney(originalPrice);
+            elements.mobileSummarySubtotalOriginal.textContent = formatMoney(originalPrice);
+        };
+
+        // Update summary
+        const updateSummary = () => {
+            const paymentStructure = elements.paymentStructure.value;
+            const baseAmount = parseFloat(amt);
+            
+            // Regular payment calculations
+            if (paymentStructure === 'full') {
+                state.originalSubtotal = baseAmount;
+                state.finalAmount = baseAmount;
+                
+                // Enhanced cycles display
+                elements.cyclesDetails.innerHTML = `
+                    <div class="cycle-cards">
+                        ${createCycleCard('Full Payment', baseAmount, true).outerHTML}
+                    </div>
+                `;
+                elements.mobileCyclesDetails.innerHTML = elements.cyclesDetails.innerHTML;
+                
+                updateSubtotalDisplay(baseAmount);
+            } else if (paymentStructure === 'half') {
+                const nowAmount = baseAmount / 2;
+                const nextAmount = baseAmount / 2;
+                state.originalSubtotal = baseAmount;
+                state.finalAmount = nowAmount;
+                
+                // Enhanced cycles display
+                elements.cyclesDetails.innerHTML = `
+                    <div class="cycle-cards">
+                        ${createCycleCard('First Payment', nowAmount, true).outerHTML}
+                        ${createCycleCard('Next Payment', nextAmount).outerHTML}
+                    </div>
+                `;
+                elements.mobileCyclesDetails.innerHTML = elements.cyclesDetails.innerHTML;
+                
+                updateSubtotalDisplay(nowAmount);
+            } else if (paymentStructure === 'spread') {
+                const monthlyAmount = (baseAmount * 1.08) / 3;
+                state.originalSubtotal = baseAmount;
+                state.finalAmount = monthlyAmount;
+                
+                // Enhanced cycles display
+                elements.cyclesDetails.innerHTML = `
+                    <div class="cycle-cards">
+                        ${createCycleCard('First Month', monthlyAmount, true).outerHTML}
+                        ${createCycleCard('Second Month', monthlyAmount).outerHTML}
+                        ${createCycleCard('Third Month', monthlyAmount).outerHTML}
+                    </div>
+                `;
+                elements.mobileCyclesDetails.innerHTML = elements.cyclesDetails.innerHTML;
+                
+                updateSubtotalDisplay(monthlyAmount);
+            }
+            
+            // Apply any existing coupon
+            if (state.currentDiscount > 0) {
+                calculateDiscount();
+            }
+        };
+
+        // Modal controls
+        const openSummaryModal = () => {
+            elements.modal.element.classList.add('active');
+            elements.modal.backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeSummaryModal = () => {
+            elements.modal.element.classList.remove('active');
+            elements.modal.backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        /* ======================
+           PAYMENT PROCESSING
+           ====================== */
+        
+
+function getRef() {
+  const timestamp = Date.now();
+  const random = Math.floor(Math.random() * 1000); // Reduced randomness
+  return `FEXA_${timestamp}_${random}`.slice(0, 50); // Ensure ≤50 chars
+}
+// Payment Success Log callback
+const appendTrans = async (transLog) => {
+  try {
+    const fd = new FormData();
+    fd.append('action', 'append');
+    fd.append('sheetId', SHEET_ID);
+    fd.append('sheetName', PAYMENT_SHEET_NAME);
+    fd.append('valuesArray', JSON.stringify([transLog])); // Wrap in array for appendMultipleData
+
+    const response = await fetch(GAS_URL, {
+      method: 'POST',
+      body: fd
+    });
+    
+    const result = await response.json();
+    console.log('Append result:', result);
+    return result;
+  } catch (error) {
+    console.error('Append failed:', error);
+    return { success: false, message: error.message };
+  }
+};
+
+// Payment initiation
+// Payment initiation
+const initiatePayment = async () => {
+  const email = elements.emailInput.value.trim();
+  
+  // Validate email
+  if (!email || !/\S+@\S+\.\S+/.test(email)) {
+    showPaymentError('Please enter a valid email address');
+    return;
+  }
+  
+  disablePaymentButtons(true); // Disable buttons during processing
+  
+  try {
+    // Convert currency if needed (USD → GHS)
+    let paymentAmount = state.finalAmount;
+    if (currency === "USD") {
+      const FALLBACK_RATE = 12.5; // Fallback rate
+      paymentAmount = Math.round(paymentAmount * FALLBACK_RATE * 100); // Convert to pesewas
+    } else {
+      paymentAmount = Math.round(paymentAmount * 100); // GHS to pesewas
+    }
+	
+	payRef = getRef();
+	console.log(payRef)
+    
+    // Get applied coupon codes
+    const appliedCoupons = Array.from(state.appliedCoupons).join(', ');
+    
+    // Initialize Paystack
+    const handler = PaystackPop.setup({
+      key: "pk_test_15b4ae133a0c1412d23e7b84147de6c2dd621471",
+      email: email,
+      amount: paymentAmount,
+	  ref: payRef,
+      currency: 'GHS',
+      metadata: {
+        plan: plan,
+        original_amount: state.finalAmount,
+        original_currency: currency,
+        discount: state.currentDiscount,
+        discount_type: state.currentDiscountType,
+        payment_structure: elements.paymentStructure.value,
+        coupon_codes: appliedCoupons || 'None'
+      },
+      callback: (response) => {
+		console.log("sssssssssssss")
+		if (response.status === "success") {
+          // Create transaction log
+          const transLog = {
+			Reference: response.reference,
+			Email: email,
+			"Amount (GHS)": (paymentAmount/100).toFixed(2),
+			Status: "Verified",
+			"Created At": new Date().toISOString(),
+			"Verified At": new Date().toISOString(),
+			Metadata: JSON.stringify({
+    plan: plan,
+    original_amount: state.finalAmount,
+    currency: currency,
+    discount: state.currentDiscount,
+    payment_structure: elements.paymentStructure.value,
+    coupon_codes: Array.from(state.appliedCoupons).join(', ') || 'None',
+    paystack_data: response // Full Paystack response
+})
+		};
+          appendTrans(transLog);
+          console.log('Verified Payment:', transLog);
+          createAndShowModal(email);
+		  
+        } else {
+          showPaymentError('Payment not completed');
+        }
+        disablePaymentButtons(false);
+	
+      },
+      onClose: () => {
+        showPaymentError('Payment window closed');
+        disablePaymentButtons(false);
+      }
+    });
+
+    handler.openIframe();
+
+  } catch (error) {
+    showPaymentError(error.message);
+    disablePaymentButtons(false);
+  }
+};
+
+
+        // Helper functions
+       const disablePaymentButtons = (disabled) => {
+    if (disabled) {
+        // Add spinner to main button
+        elements.continueButton.innerHTML = `
+            <span class="inline-flex items-center">
+                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Processing...
+            </span>
+        `;
+        elements.continueButton.disabled = true;
+        
+        // Add spinner to mobile button if it exists
+        if (elements.mobileContinueButton) {
+            elements.mobileContinueButton.innerHTML = `
+                <span class="inline-flex items-center">
+                    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Processing...
+                </span>
+            `;
+            elements.mobileContinueButton.disabled = true;
+        }
+    } else {
+        // Restore original state
+        elements.continueButton.textContent = 'Continue to Payment';
+        elements.continueButton.disabled = false;
+        
+        if (elements.mobileContinueButton) {
+            elements.mobileContinueButton.textContent = 'Continue';
+            elements.mobileContinueButton.disabled = false;
+        }
+    }
+};
+
+        // Replace the showPaymentError function with this:
+const showPaymentError = (message, isSuccess = false) => {
+    // Remove any existing notifications first
+    const existingNote = document.querySelector('.payment-notification');
+    if (existingNote) existingNote.remove();
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `payment-notification ${isSuccess ? 'success' : ''}`;
+    notification.innerHTML = `
+        <div class="notification-icon">
+            ${isSuccess ? '✓' : '⚠️'}
+        </div>
+        <div class="notification-content">
+            ${isSuccess ? 'Success!' : 'Payment Error:'} ${message}
+        </div>
+        <div class="notification-close">&times;</div>
+    `;
+    
+    // Add to DOM
+    document.body.appendChild(notification);
+    
+    // Trigger animation
+    setTimeout(() => notification.classList.add('visible'), 10);
+    
+    // Auto-hide after 5 seconds
+    const autoHide = setTimeout(() => {
+        notification.classList.remove('visible');
+        setTimeout(() => notification.remove(), 300);
+    }, 5000);
+    
+    // Manual close handler
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        clearTimeout(autoHide);
+        notification.classList.remove('visible');
+        setTimeout(() => notification.remove(), 300);
+    });
+    
+    // Re-enable buttons if it's an error
+    if (!isSuccess) disablePaymentButtons(false);
+};
+
+//Create a success notification function
+const showPaymentSuccess = (message) => {
+    showPaymentError(message, true);
+};
+
+        // Initialize the page
+        initPage();
+    });
+
+    // Hide loader when DOM is fully ready
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('page-loader');
+        if (loader) {
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.remove(), 500);
+            }, 1200);
+        }
+    });
+</script>
+
+<style>
+    /* Enhanced UI Styles */
+    .cycle-cards {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+    
+    .cycle-card {
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        flex: 1;
+        min-width: 120px;
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .cycle-card.highlighted {
+        border: 1px solid #8b5cf6;
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+    }
+    
+    .cycle-card-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .cycle-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .cycle-title {
+        font-size: 13px;
+        color: #64748b;
+    }
+    
+    .cycle-badge {
+        background: #8b5cf6;
+        color: white;
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+    
+    .cycle-amount {
+        font-weight: 700;
+        font-size: 16px;
+        color: #1e293b;
+    }
+    
+    .cycle-progress {
+        height: 4px;
+        background: #e2e8f0;
+        border-radius: 2px;
+        overflow: hidden;
+    }
+    
+    .cycle-progress::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: #8b5cf6;
+        border-radius: 2px;
+        animation: progress 1.5s ease-in-out;
+    }
+    
+    .feature-pills {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+    
+    .feature-pill {
+        background: #f1f5f9;
+        color: #475569;
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    @keyframes progress {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    
+    /* Enhanced coupon input */
+    .coupon-input.active {
+        animation: slideDown 0.3s ease-out;
+    }
+    
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</body>
+</html>

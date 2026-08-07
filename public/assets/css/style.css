@@ -1,0 +1,406 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+    --primary: #7c3aed;
+    --primary-light: #8b5cf6;
+    --secondary: #f97316;
+    --dark: #1e1b4b;
+    --light: #f5f3ff;
+}
+
+body { 
+    font-family: 'Inter', sans-serif;
+    /* background-color: #fafafa; */
+}
+
+.nav-link {
+    position: relative;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 500;
+}
+
+/* Underline animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu background */
+.mobile-gradient {
+    background: linear-gradient(135deg, rgba(237, 233, 254, 0.98), rgba(243, 232, 255, 0.98), rgba(245, 243, 255, 0.98));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Dropdown animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.dropdown-content {
+    animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mobile menu slide-in */
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.mobile-menu-item {
+    animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+/* Hamburger animation */
+.hamburger {
+    transition: all 0.3s ease;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+    top: 6px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 12px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 18px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 12px;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 12px;
+}
+
+/* CTA button hover effect */
+.cta-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+    transform: translateX(-100%);
+}
+
+.cta-button:hover::after {
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% { transform: translateX(100%); }
+}
+
+/* Mobile dropdown indicator */
+.dropdown-indicator {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.active .dropdown-indicator {
+    transform: rotate(180deg);
+}
+
+/* Mobile hover/fill effect */
+@media (hover: hover) and (pointer: fine) {
+    .mobile-link-hover:hover {
+        background-color: rgba(124, 58, 237, 0.1);
+    }
+}
+
+/* Touch devices */
+@media (pointer: coarse) {
+    .mobile-link-hover:active {
+        background-color: rgba(124, 58, 237, 0.1);
+        transition: background-color 0.1s ease;
+    }
+}
+
+/* Navbar scroll effect */
+nav {
+    background-color: white !important;
+    backdrop-filter: none !important;
+}
+
+nav.scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styles */
+footer {
+    background-color: #000000 !important;
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Service and Solution cards */
+.service-card {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--primary);
+    box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.15);
+}
+
+.solution-card {
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -5px rgba(124, 58, 237, 0.15);
+}
+
+/* Dropdown enhancements */
+.desktop-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.group:hover .desktop-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Mobile dropdown functionality */
+.mobile-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.mobile-dropdown.open {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+
+/* Dark Hero Button with Gradient Border */
+.btn-dark-hero {
+    position: relative;
+    background: #1e1b4b;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    isolation: isolate;
+    
+    /* Mobile text adjustment */
+    @media (max-width: 640px) {
+        font-size: 0.875rem; /* text-sm */
+        padding: 0.75rem 1.5rem; /* py-3 px-6 */
+    }
+}
+
+.btn-dark-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    padding: 2px;
+    background: linear-gradient(to right, #a855f7, #f97316, #3b82f6);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.btn-dark-hero:hover::before {
+    opacity: 0.8;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.btn-shimmer:hover {
+    background-size: 200% auto;
+    background-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255,255,255,0.15) 50%,
+        transparent 100%
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+/* ===== PURE CSS GRADIENT LINKS ===== */
+.gradient-link {
+    color: #d1d5db; /* gray-300 */
+    text-decoration: none;
+    font-size: 0.875rem; /* text-sm */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.gradient-link:hover {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(4px);
+}
+
+.gradient-link-secondary {
+    color: #d1d5db; /* gray-300 */
+    text-decoration: none;
+    font-size: 0.875rem; /* text-sm */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.gradient-link-secondary:hover {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(4px);
+}
+
+
+/* Background Gradients */
+.brand-gradient {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed, #f97316);
+}
+
+.brand-gradient-hover:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9, #ea580c);
+}
+
+.sec-brand-gradient {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.sec-brand-gradient-hover:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 1.125rem; /* text-lg */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.1); /* glassy look */
+    border-radius: 0.5rem; /* subtle rounded corners */
+    padding: 0.75rem;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #4f46e5, #7c3aed, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+
+/* ===== BUTTON SIZES ===== */
+.btn-lg {
+    padding: 1rem 2rem; /* px-8 py-4 */
+    font-size: 1.125rem; /* text-lg */
+    border-radius: 0.75rem; /* rounded-xl */
+}
+
+.btn-md {
+    padding: 0.75rem 1.5rem; /* px-6 py-3 */
+    font-size: 0.875rem; /* text-base */
+    border-radius: 0.5rem; /* rounded-lg */
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    font-size: 0.75rem; /* text-sm */
+    border-radius: 0.375rem; /* rounded-lg */
+}
+
+/* Mobile adjustments for larger buttons */
+@media (max-width: 640px) {
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .btn-nav {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.75rem;
+    }
+}

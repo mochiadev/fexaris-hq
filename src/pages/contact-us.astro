@@ -1,0 +1,683 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact Fexa Digital | Get Started Today"
+  
+  
+  canonical="https://fexadigital.com/contact-us.html"
+  
+  
+>
+  <!-- End of Navigation-->
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 text-white overflow-hidden">
+        <!-- Background with Gradient Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                alt="Modern office workspace" 
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-purple-900/80 to-blue-900/90"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-6 h-6 bg-green-400/30 rounded-full floating-element"></div>
+        <div class="absolute top-40 right-20 w-4 h-4 bg-purple-400/30 rounded-full floating-element" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-40 left-1/4 w-3 h-3 bg-blue-400/30 rounded-full floating-element" style="animation-delay: 2s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/20">
+                    <i class="fas fa-headset text-3xl text-white"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Let's Start Your <span class="gradient-text">Digital Transformation</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+                    Ready to elevate your business with cutting-edge AI solutions? Let's discuss your vision.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://calendly.com/fexa-digital/30min" target="_blank" 
+                       class="bg-green-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        Book Free Consultation
+                    </a>
+                    <a href="#contact-form" 
+                       class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+                        Send Us a Message
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Form & Message Section -->
+<section id="contact-form" class="py-16 px-4 sm:px-6 lg:px-8 bg-white circuit-board">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <!-- Left Pane: Send Us a Message -->
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
+                    <p class="text-xl text-gray-600 mb-6">
+                        We'd love to hear about your business and how we can help you achieve your goals.
+                    </p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-lightbulb text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Strategic Partnership</h3>
+                            <p class="text-gray-600">We approach every project as a partnership, working closely with you to deliver exceptional results.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-rocket text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Rapid Deployment</h3>
+                            <p class="text-gray-600">Our streamlined process ensures quick implementation without compromising on quality.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-shield-alt text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Ongoing Support</h3>
+                            <p class="text-gray-600">We provide continuous support and optimization to ensure your solutions evolve with your business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Pane: Contact Form -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                <!-- Step Indicator -->
+                <div class="flex items-center justify-between mb-8" id="step-indicator">
+                    <!-- Will be dynamically updated -->
+                </div>
+
+                <!-- Multi-step Form -->
+                <form id="contact-form-element" method="POST" action="https://formsubmit.co/samuriel01@gmail.com" class="space-y-6">
+                    <!-- Hidden FormSubmit config -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from Fexa Digital">
+                                          
+                    <!-- STEP 1: Personal Information -->
+                    <div class="step step-transition animate-slide-in" data-step="1">
+                        <div class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                    <input type="text" id="name" name="name" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
+                                           placeholder="Your full name">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                    <input type="email" id="email" name="email" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
+                                           placeholder="your.email@example.com">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                                <input type="text" id="company" name="company" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
+                                       placeholder="Your company name">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
+                                       placeholder="Your phone number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Project Details -->
+                    <div class="step hidden step-transition" data-step="2">
+                        <div class="space-y-6">
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">How can we help? *</label>
+                                <select id="service" name="service" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors">
+                                    <option value="">Select an option</option>
+                                    <option value="web-design">Web Design</option>
+                                    <option value="web-redesign">Web Redesign</option>
+                                    <option value="ai-automation">AI Automation</option>
+                                    <option value="social-media-ads">Social Media Ads (Digital Advertising)</option>
+                                    <option value="cloud-migration">Cloud Migration</option>
+                                    <option value="web-hosting">Web Hosting and Maintenance</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div id="other-service-container" class="hidden">
+                                <label for="other-service" class="block text-sm font-medium text-gray-700 mb-2">Please specify *</label>
+                                <input type="text" id="other-service" name="other-service" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
+                                       placeholder="Tell us what you're looking for">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Project Details *</label>
+                                <textarea id="message" name="message" rows="5" 
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
+                                          placeholder="Tell us about your project, goals, and timeline..."
+                                          required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between gap-4 pt-8">
+                        <button type="button" id="prevBtn" class="hidden flex-1 py-3 px-6 border-2 border-gray-800 bg-gray-800 text-white font-semibold rounded-full hover:bg-gray-700 hover:border-gray-700 transition-colors shadow-sm">
+                            Back
+                        </button>
+                        <button type="button" id="nextBtn" class="flex-1 py-3 px-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md">
+                            Next Step
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .step-transition {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .animate-slide-in {
+        animation: slideIn 0.5s ease-out forwards;
+    }
+    
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .connector-line {
+        background: linear-gradient(to right, #e5e7eb 50%, #e5e7eb 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all 0.5s ease-out;
+    }
+    
+    .connector-line.active {
+        background: linear-gradient(to right, #4f46e5 50%, #e5e7eb 50%);
+        background-size: 200% 100%;
+        background-position: left bottom;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById("contact-form-element");
+        const steps = document.querySelectorAll(".step");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const stepIndicator = document.getElementById("step-indicator");
+        
+        // Toggle "Other" service field
+        const serviceSelect = document.getElementById('service');
+        const otherServiceContainer = document.getElementById('other-service-container');
+        const otherServiceInput = document.getElementById('other-service');
+        
+        if (serviceSelect) {
+            serviceSelect.addEventListener('change', function() {
+                if (this.value === 'other') {
+                    otherServiceContainer.classList.remove('hidden');
+                    otherServiceInput.required = true;
+                } else {
+                    otherServiceContainer.classList.add('hidden');
+                    otherServiceInput.required = false;
+                    otherServiceInput.value = '';
+                }
+            });
+        }
+
+        let currentStep = 0;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+
+        // Update step indicator with animated connectors
+        const updateStepIndicator = () => {
+            const totalSteps = steps.length;
+            stepIndicator.innerHTML = "";
+            
+            for (let i = 0; i < totalSteps; i++) {
+                const stepBox = document.createElement("div");
+                stepBox.className = "flex flex-col items-center flex-1";
+                
+                // Step circle
+                const circle = document.createElement("div");
+                circle.className = `w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all duration-300 ${
+                    i === currentStep 
+                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg shadow-purple-200'
+                        : i < currentStep
+                        ? 'bg-purple-100 text-purple-600'
+                        : 'bg-gray-100 text-gray-400'
+                }`;
+                circle.textContent = i + 1;
+                
+                // Step label
+                const label = document.createElement("span");
+                label.className = `text-xs mt-2 text-center font-medium ${
+                    i === currentStep ? 'text-purple-600' : 'text-gray-500'
+                }`;
+                label.textContent = ["Your Info", "Project Details"][i];
+                
+                stepBox.appendChild(circle);
+                stepBox.appendChild(label);
+                
+                // Add to container
+                stepIndicator.appendChild(stepBox);
+                
+                // Add animated connector if not last step
+                if (i < totalSteps - 1) {
+                    const connector = document.createElement("div");
+                    connector.className = `flex-1 h-1 mx-2 relative connector-line ${
+                        i < currentStep ? 'active' : ''
+                    }`;
+                    stepIndicator.appendChild(connector);
+                }
+            }
+            
+            // Activate connector animations
+            document.querySelectorAll('.connector-line').forEach((connector, index) => {
+                if (index < currentStep) {
+                    setTimeout(() => {
+                        connector.classList.add('active');
+                    }, index * 100);
+                } else {
+                    connector.classList.remove('active');
+                }
+            });
+        };
+
+        // Show current step with animation
+        const showStep = (index) => {
+            steps.forEach((step, i) => {
+                if (i === index) {
+                    step.classList.remove("hidden");
+                    step.classList.add("animate-slide-in");
+                } else {
+                    step.classList.add("hidden");
+                    step.classList.remove("animate-slide-in");
+                }
+            });
+            
+            prevBtn.classList.toggle("hidden", index === 0);
+            nextBtn.textContent = index === steps.length - 1 ? "Send Message" : "Next Step";
+            updateStepIndicator();
+        };
+
+        // Show error message for a field
+        const showError = (field, message) => {
+            field.classList.add("border-red-500", "focus:ring-red-500", "focus:border-red-500");
+            const errorEl = document.createElement("p");
+            errorEl.className = "text-red-500 text-xs mt-1 form-error";
+            errorEl.textContent = message;
+            field.insertAdjacentElement("afterend", errorEl);
+        };
+
+        // Clear all error messages
+        const clearErrors = () => {
+            document.querySelectorAll(".form-error").forEach(e => e.remove());
+            document.querySelectorAll("input, textarea, select").forEach(input => {
+                input.classList.remove(
+                    "border-red-500", 
+                    "focus:ring-red-500", 
+                    "focus:border-red-500"
+                );
+            });
+        };
+
+        // Validate fields in current step
+        const validateFields = (containerSelector) => {
+            const container = document.querySelector(containerSelector);
+            const fields = container.querySelectorAll("input, textarea, select");
+            let isValid = true;
+            
+            fields.forEach((field) => {
+                const value = field.value.trim();
+                
+                if (field.hasAttribute("required") && !value) {
+                    showError(field, "This field is required.");
+                    isValid = false;
+                } else if (field.type === "email" && value && !emailRegex.test(value)) {
+                    showError(field, "Please enter a valid email address.");
+                    isValid = false;
+                } else if (field.type === "tel" && value && !phoneRegex.test(value.replace(/\s/g, ''))) {
+                    showError(field, "Please enter a valid phone number.");
+                    isValid = false;
+                }
+            });
+            
+            return isValid;
+        };
+
+        // Validate "Other" field if selected
+        const validateOtherField = () => {
+            if (serviceSelect.value === 'other' && !otherServiceInput.value.trim()) {
+                showError(otherServiceInput, "Please specify what service you need in the 'Other' field.");
+                return false;
+            }
+            return true;
+        };
+
+        // Next button click handler
+        nextBtn.addEventListener("click", () => {
+            clearErrors();
+
+            // Validate current step before proceeding
+            let isValid = true;
+            
+            if (currentStep === 0) {
+                // Validate step 1 fields
+                isValid = validateFields(`.step[data-step="1"]`);
+            } else if (currentStep === 1) {
+                // Validate step 2 fields
+                isValid = validateFields(`.step[data-step="2"]`);
+                
+                // Validate "Other" field if needed
+                if (isValid && serviceSelect.value === 'other') {
+                    isValid = validateOtherField();
+                }
+            }
+
+            if (!isValid) return;
+
+            // Proceed to next step or submit
+            if (currentStep === steps.length - 1) {
+                // Form submission
+                nextBtn.innerHTML = `
+                    <span class="flex items-center justify-center">
+                        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                    </span>
+                `;
+                nextBtn.disabled = true;
+                
+                // Create FormData from the form
+                const formData = new FormData(form);
+                
+                // If "Other" is selected, ensure the value is included
+                if (serviceSelect.value === 'other') {
+                    formData.set('service', 'Other: ' + otherServiceInput.value);
+                }
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Success message - maintaining original structure
+                        form.innerHTML = `
+                            <div class="bg-white/90 p-6 rounded-lg text-center">
+                                <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                                <p class="text-gray-700">We've received your message and will get back to you shortly.</p>
+                                <p class="text-gray-600 text-sm mt-4">You should receive a confirmation email shortly.</p>
+                            </div>
+                        `;
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error sending your message. Please try again or contact us directly.');
+                    nextBtn.innerHTML = 'Send Message';
+                    nextBtn.disabled = false;
+                });
+            } else {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        // Previous button click handler
+        prevBtn.addEventListener("click", () => {
+            clearErrors();
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        // Initialize form
+        showStep(currentStep);
+    });
+</script>
+
+    <!-- Contact Options Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">We're Ready to Help</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Whether you have questions, need technical support, or want to explore partnership opportunities, we're here for you.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Book a Consultation -->
+                <div class="contact-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-video text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Book a Consultation</h3>
+                    <p class="text-gray-600 mb-6">Schedule a free 30-minute strategy session to discuss your specific needs and goals.</p>
+                    <a href="https://calendly.com/fexa-digital/30min" target="_blank" 
+                       class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-indigo-700 transition-colors w-full">
+                        Schedule Now
+                    </a>
+                </div>
+
+                <!-- Request a Proposal -->
+                <div class="contact-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Request a Proposal</h3>
+                    <p class="text-gray-600 mb-6">Tell us about your project and we'll create a customized proposal tailored to your needs.</p>
+                    <a href="/website-quote" 
+                       class="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-colors w-full">
+                        Get Proposal
+                    </a>
+                </div>
+
+                <!-- Join Our Team -->  
+                <div class="contact-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Join Our Team</h3>
+                    <p class="text-gray-600 mb-6">Excited about AI and digital transformation? Explore career opportunities with us.</p>
+                    <a href="mailto:fexacareers@gmail.com" 
+                       class="inline-block bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-colors w-full">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Visit Our Office</h2>
+                <p class="text-xl text-gray-600">Come see us in Accra, Ghana</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-lg">Address</h4>
+                            <p class="text-gray-600">Accra, Ghana</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-clock text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-lg">Business Hours</h4>
+                            <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-phone text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 text-lg">Contact</h4>
+                            <p class="text-gray-600">+233 54 969 4956</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://maps.google.com/?q=Accra,Ghana" target="_blank" 
+                       class="inline-flex items-center gap-3 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors mt-4">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Get Directions
+                    </a>
+                </div>
+                
+                <div class="rounded-2xl overflow-hidden shadow-xl h-80">
+                    <!-- Google Maps Embed -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.507419093221!2d-0.205069925048679!3d5.651242132923695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9c7d7aa8a5a9%3A0x7d47081ecc42b3e8!2sAccra!5e0!3m2!1sen!2sgh!4v1690000000000!5m2!1sen!2sgh" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Footer -->
+    <!-- Footer Section -->
+</BaseLayout>
+
+<style is:global>
+body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .circuit-board {
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #7c3aed, #3b82f6);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+    const sd=document.getElementById('sd-widget'),tgl=document.getElementById('sd-toggle'),opt=document.getElementById('sd-options');
+    let open=false;
+    if(sd&&tgl&&opt){
+        tgl.addEventListener('click',e=>{
+            e.stopPropagation();
+            open=!open;
+            if(open){
+                sd.classList.add('active');
+                if(window.innerWidth<768){
+                    const b=document.createElement('div');
+                    b.id='sd-backdrop',b.className='fixed inset-0 bg-black/10 z-40';
+                    b.addEventListener('click',()=>{open=false;sd.classList.remove('active');b.remove()});
+                    document.body.appendChild(b)
+                }
+            }else{
+                open=false;sd.classList.remove('active');
+                document.getElementById('sd-backdrop')?.remove()
+            }
+        });
+        document.addEventListener('click',e=>{if(open&&!sd.contains(e.target)){open=false;sd.classList.remove('active');document.getElementById('sd-backdrop')?.remove()}});
+        document.addEventListener('keydown',e=>{if(e.key==='Escape'&&open){open=false;sd.classList.remove('active');document.getElementById('sd-backdrop')?.remove()}});
+        opt.querySelectorAll('a').forEach(o=>{o.addEventListener('click',()=>{open=false;sd.classList.remove('active');document.getElementById('sd-backdrop')?.remove()})})
+    }
+    const btt=document.getElementById('back-to-top'),btn=document.getElementById('btt-btn');
+    if(btt&&btn){
+        btn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
+        window.addEventListener('scroll',()=>{btt.classList.toggle('visible',window.pageYOffset>400)});
+        btt.classList.toggle('visible',window.pageYOffset>400)
+    }
+});
+</script>
