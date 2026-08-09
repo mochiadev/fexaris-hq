@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Contact Fexa Digital | Get Started Today"
+  title="Contact Fexaris Studio | Get Started Today"
   
   
   canonical="https://fexadigital.com/contact-us.html"
@@ -21,7 +21,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 alt="Modern office workspace" 
                 class="w-full h-full object-cover"
             >
-            <div class="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-purple-900/80 to-blue-900/90"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-[#0F1117]/95 via-[#14122B]/85 to-[#10162E]/90"></div>
         </div>
         
         <!-- Floating Elements -->
@@ -37,17 +37,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                     Let's Start Your <span class="gradient-text">Digital Transformation</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+                <p class="text-xl md:text-2xl text-body max-w-3xl mx-auto mb-8 leading-relaxed">
                     Ready to elevate your business with cutting-edge AI solutions? Let's discuss your vision.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://calendly.com/fexa-digital/30min" target="_blank" 
-                       class="bg-green-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <a href="https://calendly.com/fexaris/30min" target="_blank" 
+                       class="btn-dark-hero btn-lg btn-shimmer">
                         <i class="fas fa-calendar-check mr-2"></i>
                         Book Free Consultation
                     </a>
-                    <a href="#contact-form" 
-                       class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+                    <a href="#contact-form" class="btn-ghost btn-lg">
                         Send Us a Message
                     </a>
                 </div>
@@ -113,7 +112,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <!-- Hidden FormSubmit config -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission from Fexa Digital">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from Fexaris Studio">
                                           
                     <!-- STEP 1: Personal Information -->
                     <div class="step step-transition animate-slide-in" data-step="1">
@@ -186,10 +185,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
                     <!-- Navigation Buttons -->
                     <div class="flex justify-between gap-4 pt-8">
-                        <button type="button" id="prevBtn" class="hidden flex-1 py-3 px-6 border-2 border-gray-800 bg-gray-800 text-white font-semibold rounded-full hover:bg-gray-700 hover:border-gray-700 transition-colors shadow-sm">
+                        <button type="button" id="prevBtn" class="btn-secondary btn-md hidden flex-1">
                             Back
                         </button>
-                        <button type="button" id="nextBtn" class="flex-1 py-3 px-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md">
+                        <button type="button" id="nextBtn" class="btn-primary btn-md flex-1">
                             Next Step
                         </button>
                     </div>
@@ -494,7 +493,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-8">
                 <!-- Book a Consultation -->
                 <div class="contact-card bg-white rounded-2xl shadow-lg p-8 text-center">
                     <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -502,22 +501,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Book a Consultation</h3>
                     <p class="text-gray-600 mb-6">Schedule a free 30-minute strategy session to discuss your specific needs and goals.</p>
-                    <a href="https://calendly.com/fexa-digital/30min" target="_blank" 
-                       class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-indigo-700 transition-colors w-full">
+                    <a href="https://calendly.com/fexaris/30min" target="_blank" 
+                       class="btn-primary btn-md w-full">
                         Schedule Now
-                    </a>
-                </div>
-
-                <!-- Request a Proposal -->
-                <div class="contact-card bg-white rounded-2xl shadow-lg p-8 text-center">
-                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-file-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Request a Proposal</h3>
-                    <p class="text-gray-600 mb-6">Tell us about your project and we'll create a customized proposal tailored to your needs.</p>
-                    <a href="/website-quote" 
-                       class="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-colors w-full">
-                        Get Proposal
                     </a>
                 </div>
 
@@ -578,8 +564,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     </div>
                     
                     <a href="https://maps.google.com/?q=Accra,Ghana" target="_blank" 
-                       class="inline-flex items-center gap-3 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors mt-4">
-                        <i class="fas fa-map-marked-alt"></i>
+                       class="btn-secondary btn-md mt-4">
+                        <i class="fas fa-map-marked-alt mr-2"></i>
                         Get Directions
                     </a>
                 </div>

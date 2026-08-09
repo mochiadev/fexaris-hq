@@ -262,7 +262,7 @@ footer {
     inset: 0;
     border-radius: 0.5rem;
     padding: 2px;
-    background: linear-gradient(to right, #5B3DF5, #14D8C4, #4F7DF9);
+    background: linear-gradient(135deg, #5B3DF5 0%, #14D8C4 60%, #4F7DF9 100%);
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
@@ -371,6 +371,68 @@ footer {
     box-shadow: 0 4px 12px rgba(91, 61, 245, 0.3);
 }
 
+
+/* ===== 3-TIER BUTTON SYSTEM ===== */
+
+/* PRIMARY — gradient fill, white text, subtle glow */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(to right, #5B3DF5, #14D8C4); /* brand purple-600 → cyan-500 */
+    border-radius: 0.5rem; /* rounded-lg */
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(91, 61, 245, 0.25);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #4B2FD9, #0FB9A8); /* brand purple-700 → cyan-600 */
+    box-shadow: 0 6px 24px rgba(91, 61, 245, 0.4);
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* SECONDARY — outline, transparent fill, purple border */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #5B3DF5; /* brand purple-600 */
+    background: transparent;
+    border-radius: 0.5rem; /* rounded-lg */
+    border: 1.5px solid #5B3DF5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #5B3DF5;
+    color: white;
+    box-shadow: 0 4px 16px rgba(91, 61, 245, 0.25);
+}
+
+/* GHOST — for dark/hero backgrounds: transparent with white/30 border */
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: white;
+    background: transparent;
+    border-radius: 0.5rem; /* rounded-lg */
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
 
 /* ===== BUTTON SIZES ===== */
 .btn-lg {
