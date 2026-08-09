@@ -88,7 +88,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 class="w-full h-full object-cover absolute inset-0" onerror="this.src='https://placehold.co/600x400?text=Digital+Asset'">
             <div class="absolute inset-0 bg-gradient-to-t from-purple-600 to-transparent opacity-20"></div>
             <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-              <div class="text-white font-medium">fexadigital.com</div>
+              <div class="text-white font-medium">fexaris.com</div>
             </div>
           </div>
           
@@ -736,33 +736,19 @@ document.addEventListener('DOMContentLoaded',function(){
         'GH₵': 'ghs',
         '$': 'usd'
       };
-      
-      console.log('Starting plan:', plan);
-      console.log('Currency symbol:', currencySymbol);
 
       const currencyCode = symbolToCodeMap[currencySymbol] || currencySymbol.toLowerCase();
-      const currency = currencyCode.toUpperCase();
-
-      // Use the plan title directly for the plan slug
-      const planSlug = plan.title.toLowerCase().replace(/\s+/g, '');
-
       const price = plan.price?.[currencyCode];
-      // Renewal is now 0 as per requirement
-      const renewal = 0; 
 
       if (!price) {
-        console.error("Price not available for currency:", currency);
+        console.error("Price not available for currency:", currencyCode);
         alert("Price not available for selected currency");
         return;
       }
 
-      const encodedAmt = btoa(price.toString());
-      const encodedRecur = btoa(renewal.toString());
-      const encodedPlan = encodeURIComponent(planSlug);
-
-      const url = `./pay.html?plan=${encodedPlan}&amt=${encodedAmt}&recur=${encodedRecur}&currency=${currency}`;
-      console.log('Redirecting to:', url);
-      window.location.href = url;
+      const message = `Hi Fexaris Studio! I'm interested in the ${plan.title} package (${currencySymbol}${price}, one-time). Please share more details.`;
+      const whatsappUrl = `https://wa.me/233549694956?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     }
 
     function renderPricingCards() {

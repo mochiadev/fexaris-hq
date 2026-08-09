@@ -1,5 +1,6 @@
 ---
 // Footer.astro
+import Logo from './Logo.astro';
 ---
 <footer class="bg-[#0F1117] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -8,14 +9,14 @@
             <!-- Company Info -->
             <div class="space-y-6 lg:col-span-1">
                 <div class="flex items-center">
-                    <img src="/assets/transfexalog.png" alt="Fexaris Studio Logo" class="h-12 w-12 object-contain mr-3" />
+                    <img src="/assets/fxs-logo.png" alt="Fexaris Studio Logo" class="h-12 w-12 object-contain mr-3" />
                     <span class="text-2xl font-bold">
-                        <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">FEXARIS</span>
+                        <Logo theme="dark" class="h-9 w-auto align-middle" />
                         <span>STUDIO</span>
                     </span>
                 </div>
                 <p class="text-body text-sm leading-relaxed">
-                    An AI & digital growth studio engineering high-converting web infrastructure, data-driven acquisition, and intelligent workflow automations.
+                    Transforming businesses through cutting-edge web solutions, AI automation, and data-driven digital strategies.
                 </p>
                 <div class="flex space-x-3">
                     <a href="https://wa.me/233549694956" target="_blank" class="social-icon">

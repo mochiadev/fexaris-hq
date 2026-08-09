@@ -138,3 +138,22 @@
     line-height: 1.6;
   }
 }
+
+/* ── Custom FEXARIS wordmark (path-based SVG) ────────── */
+.feza-svg {
+  display: inline-block;
+  overflow: visible;
+}
+.logo-glyph {
+  fill: #0b0e14;
+  transition: fill 0.3s ease;
+}
+.logo-accent {
+  fill: #00d2c8;
+}
+.theme-light .logo-glyph {
+  fill: #0b0e14;
+}
+.theme-dark .logo-glyph {
+  fill: #ffffff;
+}
