@@ -9,7 +9,6 @@ interface Props {
   description?: string;
   keywords?: string;
   canonical?: string;
-  ogImage?: string;
   hideHeader?: boolean;
   hideFooter?: boolean;
 }
@@ -18,8 +17,7 @@ const {
   title,
   description = "We engineer high-converting web infrastructure, execute data-driven digital marketing, and integrate intelligent workflow automations that streamline operations and drive revenue.",
   keywords = "digital growth studio, ai automation consultancy, custom web infrastructure, technical seo agency, workflow automation, performance marketing, enterprise product engineering",
-  canonical = "https://fexadigital.com/",
-  ogImage = "https://fexadigital.com/assets/fexa-og-image.jpg",
+  canonical = "https://fexaris.com/",
   hideHeader = false,
   hideFooter = false
 } = Astro.props;
@@ -42,7 +40,6 @@ const {
     <meta property="og:url" content={canonical}>
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
-    <meta property="og:image" content={ogImage}> 
     <meta property="og:locale" content="en_GH">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -50,7 +47,6 @@ const {
     <meta name="twitter:creator" content="@FexarisStudio">
     <meta name="twitter:title" content={title}>
     <meta name="twitter:description" content={description}>
-    <meta name="twitter:image" content={ogImage}>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GV7DGWBVJB" is:inline></script>

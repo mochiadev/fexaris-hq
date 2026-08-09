@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /pay.html
-Disallow: /website-quote.html
+Disallow: /website-quote/
 
 # Disallow: /formsubmit.co/
-Sitemap: https://fexadigital.com/sitemap.xml
+Sitemap: https://fexaris.com/sitemap.xml
