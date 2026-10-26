@@ -1,506 +1,510 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Web Development',
+    description:
+      'High-converting websites and web applications built for speed, credibility, and conversion.',
+    href: '/services/web-development',
+    icon: 'fa-code',
+    iconBg: 'bg-violet-600',
+    bullets: ['Business websites & landing pages', 'Custom web apps & client portals', 'CMS & headless builds'],
+  },
+  {
+    title: 'AI Automation',
+    description:
+      'Intelligent workflows that qualify leads, follow up automatically, and remove manual work.',
+    href: '/services/ai-automation',
+    icon: 'fa-robot',
+    iconBg: 'bg-blue-500',
+    bullets: ['AI chatbots & WhatsApp automation', 'Speed-to-lead workflows', 'CRM & API integrations'],
+  },
+  {
+    title: 'Digital Marketing',
+    description:
+      'Search and paid campaigns that turn attention into qualified pipeline and measurable revenue.',
+    href: '/services/digital-marketing',
+    icon: 'fa-chart-line',
+    iconBg: 'bg-orange-500',
+    bullets: ['SEO & local search', 'Meta & Google Ads', 'Conversion rate optimization'],
+  },
+  {
+    title: 'Managed Cloud',
+    description:
+      'Secure, monitored infrastructure that keeps your systems online, fast, and protected.',
+    href: '/services/managed-cloud',
+    icon: 'fa-cloud',
+    iconBg: 'bg-purple-500',
+    bullets: ['Cloud migration & hosting', 'Security & monitoring', 'Maintenance & backups'],
+  },
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Discovery & Audit',
+    description:
+      'We review your website, campaigns, and workflows to find where leads and time are being lost.',
+  },
+  {
+    step: '02',
+    title: 'Strategy & Blueprint',
+    description:
+      'You receive a clear scope, timeline, and measurable goals before any build or ad spend begins.',
+  },
+  {
+    step: '03',
+    title: 'Build & Implementation',
+    description:
+      'We deliver in structured weekly phases with regular updates and a private preview link.',
+  },
+  {
+    step: '04',
+    title: 'Launch & Ongoing Support',
+    description:
+      'We test, launch, train your team, and monitor performance so the system keeps improving.',
+  },
+];
+
+const commitments = [
+  {
+    title: 'Clear scope',
+    description: 'Fixed deliverables and timelines before work starts.',
+    icon: 'fa-check-double',
+  },
+  {
+    title: 'Weekly visibility',
+    description: 'Progress updates and a private preview link throughout the build.',
+    icon: 'fa-calendar-check',
+  },
+  {
+    title: 'Measured outcomes',
+    description: 'Reporting tied to leads, revenue, and operational time saved.',
+    icon: 'fa-chart-line',
+  },
+];
+
+const team = [
+  {
+    title: 'Strategy & Growth',
+    description: 'Positioning, funnel strategy, campaign planning, and performance reporting.',
+    icon: 'fa-compass',
+    iconBg: 'bg-violet-50',
+    iconColor: 'text-violet-600',
+  },
+  {
+    title: 'Engineering',
+    description: 'Web development, platforms, performance, security, and cloud infrastructure.',
+    icon: 'fa-code',
+    iconBg: 'bg-blue-50',
+    iconColor: 'text-blue-600',
+  },
+  {
+    title: 'AI & Automation',
+    description: 'Workflow design, AI agents, integrations, and quality assurance.',
+    icon: 'fa-robot',
+    iconBg: 'bg-green-50',
+    iconColor: 'text-green-600',
+  },
+  {
+    title: 'Delivery & Support',
+    description: 'Project coordination, launch readiness, training, and ongoing maintenance.',
+    icon: 'fa-headset',
+    iconBg: 'bg-orange-50',
+    iconColor: 'text-orange-600',
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      'Youthful and up to date with the latest marketing and tech trends. They created our website and have since gone on to create marketing content in the form of videos for us.',
+    name: 'Joseph Antwi',
+    role: 'CEO, Jomaf Construction',
+    service: 'Web Design & Digital Advertising',
+    image: '/assets/clients/uche.png',
+  },
+  {
+    quote:
+      'Working with Fexaris Studio was great. They did an excellent job with our website. Very helpful in guiding us through the process and also pays attention to details. Highly recommended.',
+    name: 'Giovanna Rogow',
+    role: 'Deputy Director, Noble Supplies LTD',
+    service: 'Website Design & SEO',
+    image: '/assets/clients/giovanna.jpg',
+  },
+  {
+    quote:
+      'I love the seamless customer experience working with Fexaris Studio. Delivering timely, technical reports and helping me track my customers feedback efficiently. I am happy to recommend them.',
+    name: 'Adiele Greatman',
+    role: 'Co-founder, Jamara Stores',
+    service: 'Web Design & Digital Advertising',
+    image: '/assets/clients/Adiele.png',
+  },
+];
+
+const clientLogos = [
+  '/assets/clients/ban1.png',
+  '/assets/clients/ban2.png',
+  '/assets/clients/ban3.png',
+  '/assets/clients/ban4.png',
+  '/assets/clients/ban5.png',
+];
 ---
 
 <BaseLayout
-  title="About Fexaris Studio | Digital Marketing & AI Automation Studio"
-  description="Meet Fexaris Studio - a Digital Marketing & AI Automation Studio engineering high-converting web infrastructure, acquisition systems, and intelligent workflow automations."
-  keywords="digital marketing & AI automation, digital transformation, web product engineering, ai automation consultancy, technical seo agency, enterprise digital growth"
+  title="About Fexaris Studio | Web, Marketing & AI Automation"
+  description="Fexaris Studio is an Accra-based digital growth studio connecting high-converting websites, performance marketing, and AI automation under one accountable team."
+  keywords="about fexaris studio, digital growth studio accra, web development ghana, digital marketing ghana, ai automation ghana"
   canonical="https://fexaris.com/about-us/"
-  
-  
 >
-  <!-- End of Navigation-->
-
-<!-- Section 1: Hero Section -->
-<section class="min-h-screen text-white relative overflow-hidden pt-20">
-    <!-- Background with Pattern -->
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-[#12121C] via-[#14122B] to-[#0F1117]"></div>
-        <div class="absolute inset-0 grid-pattern"></div>
-        <!-- Floating Shapes -->
-        <div class="absolute top-1/4 left-1/4 w-20 h-20 bg-purple-500/20 rounded-full floating-shape"></div>
-        <div class="absolute top-1/3 right-1/4 w-16 h-16 bg-orange-500/20 rounded-full floating-shape" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-1/4 left-1/3 w-24 h-24 bg-blue-500/20 rounded-full floating-shape" style="animation-delay: 4s;"></div>
+  <!-- Hero -->
+  <section class="relative isolate overflow-hidden bg-[#0F1117] px-4 pb-20 pt-32 text-white sm:px-6 lg:px-8">
+    <img
+      src="/assets/hero-image.jpeg"
+      alt=""
+      aria-hidden="true"
+      loading="eager"
+      decoding="async"
+      class="absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-65"
+    />
+    <div
+      class="absolute inset-0 -z-10 bg-gradient-to-b from-[#0F1117]/80 via-[#0F1117]/85 to-[#0F1117] lg:bg-gradient-to-r lg:from-[#0F1117] lg:via-[#0F1117]/90 lg:to-[#0F1117]/40"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:56px_56px] opacity-50"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(91,61,245,0.35),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(20,216,196,0.2),transparent_40%)]"
+      aria-hidden="true"
+    >
     </div>
 
-    <div class="container mx-auto px-4 h-full flex items-center relative z-10">
-        <div class="max-w-4xl mx-auto text-center py-16">
-            <span class="text-sm font-semibold tracking-widest text-orange-300 mb-4 block">ABOUT FEXARIS STUDIO</span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                AI & Digital Growth for <span class="text-transparent bg-gradient-to-r from-orange-400 to-purple-400 bg-clip-text">Scale-Minded Businesses</span>
-            </h1>
-            <p class="text-lg text-body mb-8 max-w-2xl mx-auto">
-                Fexaris Studio combines world-class engineering with strategic market intelligence to turn your business into a scalable, revenue-generating machine.
-            </p>
-            <div class="flex gap-4 justify-center items-center flex-wrap">
-                <a href="/getting-started" class="btn-dark-hero btn-lg btn-shimmer">
-                    Start Your Journey
-                    <i class="fas fa-arrow-right ml-3"></i>
+    <div class="relative mx-auto max-w-5xl">
+      <div class="max-w-3xl">
+        <span class="text-sm font-semibold uppercase tracking-widest text-cyan-300">About Fexaris Studio</span>
+        <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+          One partner for the{' '}
+          <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            systems your growth depends on.
+          </span>
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-body">
+          Fexaris Studio is an Accra-based digital growth studio. We connect high-converting web infrastructure,
+          performance marketing, and AI automation into one accountable system.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <a href="/contact-us" class="btn-primary btn-md">
+            <i class="fas fa-calendar-check mr-2" aria-hidden="true"></i>
+            Book a Strategy Call
+          </a>
+          <a href="/case-studies" class="btn-ghost btn-md">See Our Work</a>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-400">
+          <span class="inline-flex items-center gap-2">
+            <i class="fas fa-calendar-alt text-cyan-400" aria-hidden="true"></i>
+            Founded 2025
+          </span>
+          <span class="inline-flex items-center gap-2">
+            <i class="fas fa-map-marker-alt text-cyan-400" aria-hidden="true"></i>
+            Accra, Ghana
+          </span>
+          <span class="inline-flex items-center gap-2">
+            <i class="fas fa-globe text-cyan-400" aria-hidden="true"></i>
+            Ghana · West Africa · International
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section id="story" class="bg-white px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+      <div>
+        <span class="text-sm font-semibold uppercase tracking-widest text-purple-600">Who we are</span>
+        <h2 class="mt-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl">
+          A growth studio, not a collection of disconnected vendors.
+        </h2>
+
+        <div class="mt-6 space-y-4 leading-relaxed text-gray-600">
+          <p>
+            Most growing businesses are held back by fragmented providers: a website that does not convert, marketing
+            that cannot fix the site, and manual follow-up that loses leads. Fexaris brings web, marketing, and
+            automation under one accountable team.
+          </p>
+          <p>
+            We are deliberately small and senior. You work directly with the people doing the work—from the first audit
+            through launch and ongoing optimization.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          <div class="rounded-xl border border-gray-200 bg-gray-50 p-4">
+            <i class="fas fa-earth-africa text-purple-600" aria-hidden="true"></i>
+            <h3 class="mt-3 text-sm font-semibold text-gray-900">International standards</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-600">Performance, security, and accessibility built in.</p>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-gray-50 p-4">
+            <i class="fas fa-location-dot text-orange-500" aria-hidden="true"></i>
+            <h3 class="mt-3 text-sm font-semibold text-gray-900">Accra accountability</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-600">Local access to the team doing the work.</p>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-gray-50 p-4">
+            <i class="fas fa-user-tie text-blue-600" aria-hidden="true"></i>
+            <h3 class="mt-3 text-sm font-semibold text-gray-900">Senior delivery</h3>
+            <p class="mt-1 text-xs leading-relaxed text-gray-600">Founder-led, with no handoff chain.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="rounded-2xl bg-[#0F1117] p-7 text-white shadow-xl">
+        <h3 class="text-lg font-semibold">Studio at a glance</h3>
+        <dl class="mt-6 space-y-5 text-sm">
+          <div class="flex items-start justify-between gap-6 border-b border-white/10 pb-4">
+            <dt class="text-gray-400">Founded</dt>
+            <dd class="text-right font-medium">2025</dd>
+          </div>
+          <div class="flex items-start justify-between gap-6 border-b border-white/10 pb-4">
+            <dt class="text-gray-400">Headquarters</dt>
+            <dd class="text-right font-medium">Accra, Ghana</dd>
+          </div>
+          <div class="flex items-start justify-between gap-6 border-b border-white/10 pb-4">
+            <dt class="text-gray-400">Service reach</dt>
+            <dd class="text-right font-medium">Ghana, West Africa &amp; international clients</dd>
+          </div>
+          <div class="flex items-start justify-between gap-6 border-b border-white/10 pb-4">
+            <dt class="text-gray-400">Core focus</dt>
+            <dd class="text-right font-medium">Web, marketing &amp; AI automation</dd>
+          </div>
+          <div class="flex items-start justify-between gap-6">
+            <dt class="text-gray-400">Delivery</dt>
+            <dd class="text-right font-medium">Founder-led senior specialists</dd>
+          </div>
+        </dl>
+        <p class="mt-6 border-t border-white/10 pt-5 text-sm leading-relaxed text-gray-400">
+          One team accountable for the build, the campaigns, and the systems that support them.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section id="services" class="bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <span class="text-sm font-semibold uppercase tracking-widest text-purple-600">What we do</span>
+        <h2 class="mt-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl">
+          Four capabilities. One growth system.
+        </h2>
+        <p class="mt-4 text-gray-600">
+          Each service works on its own—but the real advantage is how they connect.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        {
+          services.map((service) => (
+            <article class="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:shadow-lg">
+              <div class="flex items-start justify-between">
+                <div class={`flex h-12 w-12 items-center justify-center rounded-xl ${service.iconBg}`}>
+                  <i class={`fas ${service.icon} text-xl text-white`} aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-light leading-none text-gray-300" aria-hidden="true">+</span>
+              </div>
+
+              <h3 class="mt-5 text-xl font-bold text-gray-900">{service.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-gray-600">{service.description}</p>
+
+              <ul class="mt-5 space-y-2 text-sm text-gray-700">
+                {service.bullets.map((bullet) => (
+                  <li class="flex items-center gap-2">
+                    <i class="fas fa-check text-sm text-green-500" aria-hidden="true"></i>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-auto pt-6">
+                <a
+                  href={service.href}
+                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-600 transition-colors hover:text-purple-700"
+                >
+                  Explore {service.title}
+                  <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                 </a>
-                <a href="#story" class="inline-flex items-center px-6 py-3 text-white font-medium rounded-lg border border-white/30 hover:bg-white/10 transition-all duration-300">
-                    <i class="fas fa-history mr-2"></i>
-                    Our Story
-                </a>
-            </div>
-        </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
-</section>
-<!-- End of Section 1: Hero Section -->
+  </section>
 
-<!-- Section 2: The Origin Story -->
-<section id="story" class="py-20 px-4 lg:px-8 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Content -->
-            <div class="space-y-6">
-                <span class="text-sm font-semibold tracking-widest text-purple-600">OUR JOURNEY</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-                    Ending the Era of <span class="text-orange-500">"Good Enough"</span>
-                </h2>
-                <div class="space-y-4 text-gray-600 leading-relaxed">
-                    <p>
-                        Fexaris Studio was established with a singular mission: to engineer high-converting digital infrastructure and intelligent systems that accelerate business growth.
-                    </p>
-                    <p>
-                        We started as a premium web product studio serving clients across the globe. During this time, we saw too many businesses settling for slow, template-based sites that looked okay but failed to drive revenue. We knew there was a better way.
-                    </p>
-                    <p>
-                        Based here in Accra, we treat every project not just as a design task, but as a business asset that must perform, convert, and grow. We are here to build the digital backbone of modern commerce.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Image/Visual -->
-            <div class="relative">
-                <div class="bg-gradient-to-br from-purple-100 to-orange-50 rounded-2xl p-8 aspect-square flex items-center justify-center">
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-gradient-to-r from-purple-600 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-bolt text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">From Vision to Impact</h3>
-                        <p class="text-gray-600">Building digital excellence since 2020</p>
-                    </div>
-                </div>
-                <!-- Accent Elements -->
-                <div class="absolute -top-4 -right-4 w-8 h-8 bg-orange-500 rounded-full"></div>
-                <div class="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-500 rounded-full"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End of Section 2: The Origin Story -->
+  <!-- How we work -->
+  <section id="process" class="bg-white px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <span class="text-sm font-semibold uppercase tracking-widest text-purple-600">How we work</span>
+        <h2 class="mt-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl">
+          A clear process, with no black boxes.
+        </h2>
+        <p class="mt-4 text-gray-600">
+          You always know what is happening, what comes next, and how success is measured.
+        </p>
+      </div>
 
-<!-- Section 3: Digital Transformation Philosophy -->
-<section class="py-20 px-4 lg:px-8 bg-gradient-to-br from-slate-50 to-purple-50 relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500 rounded-full -translate-y-32 translate-x-32"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-500 rounded-full translate-y-32 -translate-x-32"></div>
-    </div>
-    
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-            <span class="text-sm font-semibold tracking-widest text-purple-600">OUR PHILOSOPHY</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-                Unlocking Your <span class="text-orange-500">Scaling Potential</span>
-            </h2>
-        </div>
-        
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Content -->
-            <div class="space-y-6">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Despite the rise of modern tech, many businesses are unaware of the massive growth potential hiding in their operations. We bridge that gap.
-                </p>
-                <p class="text-gray-600 leading-relaxed">
-                    At Fexaris, <strong class="text-purple-600">"Digital Transformation"</strong> isn't a buzzword—it is our specific formula for your growth. We reduce the complexity of this transformation, handling the heavy lifting to create powerful systems that allow you to focus on running your business while we make it scale.
-                </p>
-                
-                <!-- Transformation Process -->
-                <div class="space-y-4 mt-8">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <span class="font-bold">1</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Credible Presence</h4>
-                            <p class="text-gray-600 text-sm">Establishing a high-authority online brand that commands trust and attention.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <span class="font-bold">2</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">AI Integration</h4>
-                            <p class="text-gray-600 text-sm">Automating customer service and operations to save time and enhance efficiency.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <span class="font-bold">3</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Strategic Advertising</h4>
-                            <p class="text-gray-600 text-sm">Creating campaigns that drive predictable revenue and sustainable growth.</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {
+          process.map((step) => (
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-6">
+              <span class="text-sm font-bold text-purple-600">{step.step}</span>
+              <h3 class="mt-3 text-lg font-bold text-gray-900">{step.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-gray-600">{step.description}</p>
             </div>
-            
-            <!-- Visual - Transformation Diagram -->
-            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div class="text-center mb-6">
-                    <h3 class="text-xl font-bold text-gray-900">The Fexaris Transformation Engine</h3>
-                </div>
-                <div class="relative h-64">
-                    <!-- Gear 1 -->
-                    <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2">
-                        <span class="text-white text-xs font-bold">Presence</span>
-                    </div>
-                    <!-- Gear 2 -->
-                    <div class="absolute top-1/4 right-1/4 w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2">
-                        <span class="text-white text-xs font-bold">AI</span>
-                    </div>
-                    <!-- Gear 3 -->
-                    <div class="absolute bottom-1/4 left-1/2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2">
-                        <span class="text-white text-xs font-bold">Ads</span>
-                    </div>
-                    <!-- Connecting Lines -->
-                    <div class="absolute top-1/4 left-1/4 w-1/4 h-1 border-t-2 border-dashed border-purple-300 transform translate-y-4"></div>
-                    <div class="absolute top-1/4 right-1/4 w-1/4 h-1 border-t-2 border-dashed border-orange-300 transform translate-y-4"></div>
-                    <div class="absolute top-1/2 left-1/4 w-1/2 h-1 border-t-2 border-dashed border-blue-300"></div>
-                    <!-- Central Growth Gear -->
-                    <div class="absolute top-1/2 left-1/2 w-20 h-20 bg-gradient-to-r from-purple-600 to-orange-500 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 shadow-lg">
-                        <span class="text-white text-sm font-bold">Growth</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End of Section 3: Digital Transformation Philosophy -->
+          ))
+        }
+      </div>
 
-<!-- Section 4: Glocal Advantage -->
-<section class="py-20 px-4 lg:px-8 bg-gray-900 text-white relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {
+          commitments.map((item) => (
+            <div class="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-5">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-purple-50 text-purple-600">
+                <i class={`fas ${item.icon}`} aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">{item.title}</h3>
+                <p class="mt-1 text-sm leading-relaxed text-gray-600">{item.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
-    
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-            <span class="text-sm font-semibold tracking-widest text-orange-400">OUR APPROACH</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2">
-                Global Standards. <span class="text-purple-400">Local Heart.</span>
-            </h2>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <span class="text-sm font-semibold uppercase tracking-widest text-purple-600">Our team</span>
+        <h2 class="mt-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl">
+          Senior specialists. One accountable team.
+        </h2>
+        <p class="mt-4 text-gray-600">
+          You work directly with the people doing the work—no handoff chain, no account-manager layer.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          team.map((role) => (
+            <div class="rounded-2xl border border-gray-200 bg-white p-6">
+              <div class={`flex h-11 w-11 items-center justify-center rounded-lg ${role.iconBg} ${role.iconColor}`}>
+                <i class={`fas ${role.icon}`} aria-hidden="true"></i>
+              </div>
+              <h3 class="mt-5 text-lg font-bold text-gray-900">{role.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-gray-600">{role.description}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="mt-6 text-sm text-gray-500">
+        Founder-led delivery on every engagement, with senior specialists accountable for the work.
+      </p>
+    </div>
+  </section>
+
+  <!-- Client proof -->
+  <section id="clients" class="bg-white px-4 py-20 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <span class="text-sm font-semibold uppercase tracking-widest text-purple-600">Client proof</span>
+        <h2 class="mt-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl">
+          Trusted by growing businesses.
+        </h2>
+        <p class="mt-4 text-gray-600">A few words from the businesses we have worked with.</p>
+      </div>
+
+      <div class="mt-10 rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
+        <div class="grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          {
+            clientLogos.map((logo, index) => (
+              <img
+                src={logo}
+                alt={`Client logo ${index + 1}`}
+                loading="lazy"
+                decoding="async"
+                class="mx-auto h-8 w-auto max-w-[140px] object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-10"
+              />
+            ))
+          }
         </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- International Engineering -->
-            <div class="text-center p-6">
-                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-globe text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">International Engineering</h3>
-                <p class="text-gray-300">
-                    We work extensively with international clients across Europe and Asia, adhering to rigorous global development standards for code quality, security, and performance.
-                </p>
-            </div>
-            
-            <!-- Strategic Partnerships -->
-            <div class="text-center p-6">
-                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-handshake text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Strategic Partnerships</h3>
-                <p class="text-gray-300">
-                    We leverage strong technical partnerships across India and Pakistan, giving us a deep bench of specialized talent to handle complex challenges 24/7.
-                </p>
-            </div>
-            
-            <!-- Local Presence -->
-            <div class="text-center p-6">
-                <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-map-marker-alt text-white text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Accra HQ</h3>
-                <p class="text-gray-300">
-                    Yet, we are right here. You can meet us, brainstorm with us, and trust us to understand the nuances of the Ghanaian market.
-                </p>
-            </div>
-        </div>
-        
-        <!-- Stats Bar -->
-        <div class="mt-16 bg-surface/70 backdrop-blur-sm rounded-2xl p-8 border border-surface-border">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      </div>
+
+      <div class="mt-6 grid gap-5 md:grid-cols-3">
+        {
+          testimonials.map((testimonial) => (
+            <figure class="flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div class="flex gap-1 text-yellow-400" aria-label="5 out of 5 stars">
+                {Array.from({ length: 5 }).map(() => (
+                  <i class="fas fa-star text-xs" aria-hidden="true"></i>
+                ))}
+              </div>
+
+              <blockquote class="mt-4 flex-1 text-sm italic leading-relaxed text-gray-600">
+                “{testimonial.quote}”
+              </blockquote>
+
+              <figcaption class="mt-5 flex items-center gap-3 border-t border-gray-100 pt-5">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  loading="lazy"
+                  decoding="async"
+                  class="h-11 w-11 rounded-full object-cover"
+                />
                 <div>
-                    <div class="text-3xl font-bold text-orange-400">4+</div>
-                    <div class="text-gray-400 text-sm">Years Experience</div>
+                  <div class="text-sm font-semibold text-gray-900">{testimonial.name}</div>
+                  <div class="text-xs text-gray-500">{testimonial.role}</div>
+                  <div class="mt-0.5 text-xs font-medium text-purple-600">{testimonial.service}</div>
                 </div>
-                <div>
-                    <div class="text-3xl font-bold text-purple-400">50+</div>
-                    <div class="text-gray-400 text-sm">Projects Delivered</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-blue-400">12+</div>
-                    <div class="text-gray-400 text-sm">Countries Served</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-green-400">100%</div>
-                    <div class="text-gray-400 text-sm">Client Satisfaction</div>
-                </div>
-            </div>
-        </div>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
     </div>
-</section>
-<!-- End of Section 4: Glocal Advantage -->
+  </section>
 
-<!-- Section 5: Expertise & Capabilities -->
-<section class="py-20 px-4 lg:px-8 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="text-sm font-semibold tracking-widest text-purple-600">OUR EXPERTISE</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-                Built for Complexity, <span class="text-orange-500">Designed for Growth</span>
-            </h2>
-            <p class="text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-                We are not just designers; we are full-stack engineers and growth strategists.
-            </p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Custom Engineering -->
-            <div class="feature-card bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-                <div class="w-12 h-12 rounded-lg bg-blue-100 p-3 text-blue-600 mb-6">
-                    <i class="fas fa-code text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">Custom Engineering</h3>
-                <p class="text-gray-600 mb-4">
-                    When templates fail, we build custom. We specialize in modern frameworks like React, Node.js, Astro, and Next.js.
-                </p>
-                <ul class="space-y-2 text-gray-600">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
-                        <span>Scalable web applications</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
-                        <span>SaaS products</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-blue-500 mr-2 mt-1"></i>
-                        <span>Customer portals</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- AI Powered Solutions -->
-            <div class="feature-card bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-                <div class="w-12 h-12 rounded-lg bg-orange-100 p-3 text-orange-600 mb-6">
-                    <i class="fas fa-robot text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">AI Powered Solutions</h3>
-                <p class="text-gray-600 mb-4">
-                    Our coined term for the future of business. We integrate AI Automation into your workflows and combine it with data-driven Digital Ads.
-                </p>
-                <ul class="space-y-2 text-gray-600">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-orange-500 mr-2 mt-1"></i>
-                        <span>Customer service automation</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-orange-500 mr-2 mt-1"></i>
-                        <span>Lead filtering systems</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-orange-500 mr-2 mt-1"></i>
-                        <span>Self-sustaining growth engines</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- Cloud & DevOps Engineering -->
-            <div class="feature-card bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-                <div class="w-12 h-12 rounded-lg bg-purple-100 p-3 text-purple-600 mb-6">
-                    <i class="fas fa-server text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">Cloud & DevOps Engineering</h3>
-                <p class="text-gray-600 mb-4">
-                    Your growth needs a strong foundation. Our team includes Cloud DevOps experts who handle seamless cloud migrations and security architecture.
-                </p>
-                <ul class="space-y-2 text-gray-600">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
-                        <span>Cloud migrations</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
-                        <span>Server maintenance</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
-                        <span>Security architecture</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- Client Obsession -->
-            <div class="feature-card bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-                <div class="w-12 h-12 rounded-lg bg-pink-100 p-3 text-pink-600 mb-6">
-                    <i class="fas fa-heart text-xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">Client Obsession</h3>
-                <p class="text-gray-600 mb-4">
-                    We are obsessed with making our clients happy. We don't believe in transactional relationships; we believe in partnerships.
-                </p>
-                <ul class="space-y-2 text-gray-600">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-pink-500 mr-2 mt-1"></i>
-                        <span>Partnership approach</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-pink-500 mr-2 mt-1"></i>
-                        <span>Your success is our metric</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-pink-500 mr-2 mt-1"></i>
-                        <span>Long-term relationships</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <!-- Final CTA -->
+  <section class="bg-gradient-to-br from-purple-50 to-blue-50 px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-[#0F1117] to-[#14122B] p-10 text-center text-white shadow-xl md:p-14">
+      <h2 class="text-3xl font-bold leading-tight md:text-4xl">
+        Let’s build the{' '}
+        <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">system</span>{' '}
+        behind your next stage of growth.
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-body">
+        Book a 30-minute strategy call. We will review your current setup and show you exactly where the opportunities
+        are.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="/contact-us" class="btn-primary btn-md">
+          Book a Strategy Call
+          <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
+        </a>
+        <a href="/case-studies" class="btn-ghost btn-md">See Our Work</a>
+      </div>
+      <p class="mt-6 text-sm text-gray-400">No commitment · 30-minute call · Clear next steps</p>
     </div>
-</section>
-<!-- End of Section 5: Expertise & Capabilities -->
-
-<!-- Section 6: Call to Action -->
-<section class="py-20 bg-gradient-to-br from-[#0F1117] via-[#14122B] to-[#12121C] text-white overflow-hidden relative">
-    <!-- Animated Background -->
-    <div class="absolute inset-0">
-        <div class="absolute top-1/4 -left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-1/4 -right-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl"></div>
-    </div>
-    
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div class="bg-surface/70 backdrop-blur-xl border border-surface-border rounded-3xl p-12 shadow-2xl">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Ready to Transform Your Business?
-            </h2>
-            <p class="text-xl text-body mb-10 max-w-2xl mx-auto leading-relaxed">
-                From custom code to AI automation, we have the tools to make you a market leader.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/getting-started" class="btn-dark-hero btn-lg btn-shimmer">
-                    Book Your Strategy Session
-                    <i class="fas fa-calendar-check ml-3"></i>
-                </a>
-                <a href="/contact-us" class="px-8 py-4 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-300">
-                    <i class="fas fa-envelope mr-2"></i>
-                    Contact Us
-                </a>
-            </div>
-            <p class="mt-6 text-sm text-gray-400">No commitment • Custom strategy • 30-minute consultation</p>
-        </div>
-    </div>
-</section>
-<!-- End of Section 6: Call to Action -->
-
-<!-- Footer -->
-    <!-- Footer Section -->
+  </section>
 </BaseLayout>
-
-<style is:global>
-/* Page-specific styles */
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(79, 70, 229, 0.9) 100%);
-        }
-        
-        .floating-shape {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .grid-pattern {
-            background-image: 
-                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-        
-        .feature-card {
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-left-color: #5B3DF5;
-            box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.15);
-        }
-</style>
-
-<script is:inline>
-document.addEventListener('DOMContentLoaded',function(){
-    const sd=document.getElementById('sd-widget'),tgl=document.getElementById('sd-toggle'),opt=document.getElementById('sd-options');
-    let open=false;
-    if(sd&&tgl&&opt){
-        tgl.addEventListener('click',e=>{
-            e.stopPropagation();
-            open=!open;
-            if(open){
-                sd.classList.add('active');
-                if(window.innerWidth<768){
-                    const b=document.createElement('div');
-                    b.id='sd-backdrop',b.className='fixed inset-0 bg-black/10 z-40';
-                    b.addEventListener('click',()=>{open=false;sd.classList.remove('active');b.remove()});
-                    document.body.appendChild(b)
-                }
-            }else{
-                open=false;sd.classList.remove('active');
-                document.getElementById('sd-backdrop')?.remove()
-            }
-        });
-        document.addEventListener('click',e=>{if(open&&!sd.contains(e.target)){open=false;sd.classList.remove('active');document.getElementById('sd-backdrop')?.remove()}});
-        document.addEventListener('keydown',e=>{if(e.key==='Escape'&&open){open=false;sd.classList.remove('active');document.getElementById('sd-backdrop')?.remove()}});
-        opt.querySelectorAll('a').forEach(o=>{o.addEventListener('click',()=>{open=false;sd.classList.remove('active');document.getElementById('sd-backdrop')?.remove()})})
-    }
-    const btt=document.getElementById('back-to-top'),btn=document.getElementById('btt-btn');
-    if(btt&&btn){
-        btn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
-        window.addEventListener('scroll',()=>{btt.classList.toggle('visible',window.pageYOffset>400)});
-        btt.classList.toggle('visible',window.pageYOffset>400)
-    }
-});
-
-// Simple animations for page elements
-    document.addEventListener('DOMContentLoaded', function() {
-        // Add intersection observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe feature cards
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    });
-</script>
