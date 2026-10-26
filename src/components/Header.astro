@@ -4,7 +4,7 @@ import Logo from './Logo.astro';
 ---
 <header>
     <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white">
-        <div class="max-w-7xl mx-auto px-5 py-3 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-5 py-3 flex justify-between items-center relative">
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-2 group">
                 <img src="/assets/fxs-logo.png" alt="Fexaris Studio Logo" class="h-8 w-8 sm:h-10 sm:w-10 object-contain transition-transform duration-300 group-hover:scale-105" />
@@ -21,94 +21,99 @@ import Logo from './Logo.astro';
             <div class="hidden lg:flex items-center space-x-6">
                 <a href="/" class="nav-link text-gray-700 hover:text-purple-600 px-3 py-2">Home</a>
         
-                <!-- Services Dropdown -->
-                <div class="relative group">
-                    <button class="nav-link flex items-center gap-1 text-gray-700 hover:text-purple-600 px-3 py-2">
+                <!-- Services Mega Menu -->
+                <div class="group">
+                    <button type="button" class="nav-link flex items-center gap-1 text-gray-700 hover:text-purple-600 px-3 py-2" aria-haspopup="true">
                         Services
                         <span class="material-icons text-base dropdown-indicator">expand_more</span>
                     </button>
-                    <div class="absolute left-0 top-full mt-2 w-72 bg-white rounded-xl shadow-2xl py-4 desktop-dropdown border border-gray-100">
-                        <div class="px-4 py-2 border-b border-gray-100">
-                            <h4 class="font-semibold text-gray-900 text-sm uppercase tracking-wide text-purple-600">Our Services</h4>
-                        </div>
-                        <div class="grid gap-1 p-2">
-                            <!-- Web Development with Sub-Menu -->
-                            <div class="relative group/sub">
-                                <a href="/services/web-development" class="flex items-center px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors group">
-                                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-3">
-                                        <i class="fas fa-code text-white text-sm"></i>
+                    <div class="desktop-dropdown absolute left-0 right-0 top-full pt-3 z-50">
+                        <div class="mx-auto w-full max-w-5xl px-2">
+                            <div class="rounded-2xl border border-gray-200 bg-white p-3 shadow-2xl">
+                                <div class="grid gap-3 lg:grid-cols-[minmax(0,1fr)_300px]">
+                                    <!-- Service links -->
+                                    <div class="rounded-xl bg-gray-50 p-3">
+                                        <div class="grid grid-cols-2 gap-2">
+                                            <a href="/services/web-development" class="group/item flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2.5 transition-colors hover:border-gray-300 hover:bg-gray-50">
+                                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 transition-colors group-hover/item:text-purple-600">
+                                                    <i class="fas fa-code text-xs" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="text-sm font-medium text-gray-800">Web Development</span>
+                                            </a>
+                                            <a href="/services/digital-marketing#seo" class="group/item flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2.5 transition-colors hover:border-gray-300 hover:bg-gray-50">
+                                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 transition-colors group-hover/item:text-purple-600">
+                                                    <i class="fas fa-magnifying-glass text-xs" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="text-sm font-medium text-gray-800">Search Engine Optimization</span>
+                                            </a>
+                                            <a href="/services/digital-marketing#performance-marketing" class="group/item flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2.5 transition-colors hover:border-gray-300 hover:bg-gray-50">
+                                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 transition-colors group-hover/item:text-purple-600">
+                                                    <i class="fas fa-chart-line text-xs" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="text-sm font-medium text-gray-800">Performance Marketing</span>
+                                            </a>
+                                            <a href="/services/digital-marketing#social-media" class="group/item flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2.5 transition-colors hover:border-gray-300 hover:bg-gray-50">
+                                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 transition-colors group-hover/item:text-purple-600">
+                                                    <i class="fas fa-hashtag text-xs" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="text-sm font-medium text-gray-800">Social Media Marketing</span>
+                                            </a>
+                                            <a href="/services/ai-automation" class="group/item flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2.5 transition-colors hover:border-gray-300 hover:bg-gray-50">
+                                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 transition-colors group-hover/item:text-purple-600">
+                                                    <i class="fas fa-robot text-xs" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="text-sm font-medium text-gray-800">AI Automation</span>
+                                            </a>
+                                            <a href="/services/managed-cloud" class="group/item flex items-center gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2.5 transition-colors hover:border-gray-300 hover:bg-gray-50">
+                                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-500 transition-colors group-hover/item:text-purple-600">
+                                                    <i class="fas fa-cloud text-xs" aria-hidden="true"></i>
+                                                </span>
+                                                <span class="text-sm font-medium text-gray-800">Managed Cloud Services</span>
+                                            </a>
+                                        </div>
+                                        <a href="/#services" class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 transition-colors hover:text-purple-600">
+                                            All Services
+                                            <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                                        </a>
                                     </div>
-                                    <div>
-                                        <span class="font-medium text-gray-900 group-hover:text-purple-600">Web & Product Development</span>
-                                        <p class="text-xs text-gray-500">Websites, Web Apps & Portals</p>
-                                    </div>
-                                    <i class="fas fa-chevron-right text-gray-400 text-xs ml-auto transition-transform group-hover:text-purple-600"></i>
-                                </a>
 
-                                <!-- Web Development Sub-Menu -->
-                                <div class="absolute left-full top-0 ml-2 w-72 bg-white rounded-xl shadow-2xl py-3 border border-gray-100 invisible group-hover/sub:visible opacity-0 group-hover/sub:opacity-100 transition duration-200 z-50">
-                                    <div class="px-3 py-2">
-                                        <h5 class="text-xs font-semibold uppercase text-blue-600 tracking-wider">Web Solutions</h5>
-                                    </div>
-                                    <div class="grid gap-1 p-2">
-                                        <a href="/services/web-development#design" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors group">
-                                            <i class="fas fa-palette text-blue-500 w-5 mr-3"></i>
-                                            <div>
-                                                <span class="font-medium text-gray-900">Custom Websites & CMS</span>
-                                                <p class="text-xs text-gray-500">Marketing & corporate sites.</p>
-                                            </div>
-                                        </a>
-                                        <a href="/services/web-development#webapp" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors group">
-                                            <i class="fas fa-terminal text-blue-500 w-5 mr-3"></i>
-                                            <div>
-                                                <span class="font-medium text-gray-900">Web Applications & Portals</span>
-                                                <p class="text-xs text-gray-500">SaaS, dashboards & APIs.</p>
-                                            </div>
-                                        </a>
-                                        <a href="/services/web-development#design" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors group">
-                                            <i class="fas fa-layer-group text-blue-500 w-5 mr-3"></i>
-                                            <div>
-                                                <span class="font-medium text-gray-900">UX/UI Design Systems</span>
-                                                <p class="text-xs text-gray-500">Design systems & prototypes.</p>
-                                            </div>
-                                        </a>
-                                        <a href="/services/managed-cloud" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors group">
-                                            <i class="fas fa-server text-indigo-600 w-5 mr-3"></i>
-                                            <div>
-                                                <span class="font-medium text-gray-900">Infrastructure & Deployment</span>
-                                                <p class="text-xs text-gray-500">Cloud hosting & management.</p>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    <!-- Preview -->
+                                    <a href="/#services" class="group/preview relative flex min-h-[240px] flex-col overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
+                                        <img src="/assets/ads-dash.png" alt="Fexaris digital marketing dashboard preview" class="absolute inset-0 h-full w-full object-cover" />
+                                        <div class="relative flex items-center gap-1.5 border-b border-gray-200/70 bg-white/80 px-3 py-2 backdrop-blur">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-red-400"></span>
+                                            <span class="h-1.5 w-1.5 rounded-full bg-yellow-400"></span>
+                                            <span class="h-1.5 w-1.5 rounded-full bg-green-400"></span>
+                                            <span class="ml-2 text-[10px] text-gray-500">fexaris.com</span>
+                                        </div>
+                                        <div class="relative mt-auto bg-gradient-to-t from-white via-white/95 to-transparent p-3 pt-10">
+                                            <p class="text-[10px] font-medium uppercase tracking-widest text-gray-500">Fexaris Studio</p>
+                                            <p class="mt-1 text-lg font-semibold leading-tight text-gray-900">Get creative.<br />Grow faster.</p>
+                                            <span class="mt-2 inline-flex items-center gap-1.5 rounded-full bg-purple-600 px-3 py-1 text-xs font-semibold text-white transition-colors group-hover/preview:bg-purple-700">
+                                                Browse Services
+                                                <i class="fas fa-arrow-right text-[10px]" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <div class="relative flex items-center justify-between border-t border-gray-200/70 bg-white/85 px-3 py-2.5 backdrop-blur">
+                                            <span class="text-xs font-semibold tracking-wide text-gray-900">FEXARIS</span>
+                                            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-gray-900 text-white">
+                                                <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="mt-3 flex items-center gap-6 border-t border-gray-100 px-1 pt-3 text-sm">
+                                    <a href="/about-us" class="text-gray-600 transition-colors hover:text-purple-600">About Fexaris</a>
+                                    <a href="/contact-us" class="text-gray-600 transition-colors hover:text-purple-600">Contact Sales</a>
                                 </div>
                             </div>
-                            
-                            <!-- AI Automation -->
-                            <a href="/services/ai-automation" class="flex items-center px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors group">
-                                <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center mr-3">
-                                    <i class="fas fa-robot text-white text-sm"></i>
-                                </div>
-                                <div>
-                                    <span class="font-medium text-gray-900 group-hover:text-purple-600">AI & Workflow Integration</span>
-                                    <p class="text-xs text-gray-500">Automations, chatbots & sync</p>
-                                </div>
-                            </a>
-                            
-                            <!-- Digital Advertising -->
-                            <a href="/services/digital-ads" class="flex items-center px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors group">
-                                <div class="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mr-3">
-                                    <i class="fas fa-bullhorn text-white text-sm"></i>
-                                </div>
-                                <div>
-                                    <span class="font-medium text-gray-900 group-hover:text-purple-600">Digital Marketing & Acquisition</span>
-                                    <p class="text-xs text-gray-500">Paid ads, SEO & funnels</p>
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </div>
+
                 
-                <a href="/pricing" class="nav-link text-gray-700 hover:text-purple-600 px-3 py-2">Pricing</a>
+                <a href="/case-studies" class="nav-link text-gray-700 hover:text-purple-600 px-3 py-2">Case Studies</a>
                 <a href="/about-us" class="nav-link text-gray-700 hover:text-purple-600 px-3 py-2">About</a>
                 <a href="https://calendly.com/fexaris/30min" target="_blank" class="btn-secondary btn-sm">
                     <i class="fas fa-calendar-check mr-2"></i>Book a Call
@@ -148,45 +153,39 @@ import Logo from './Logo.astro';
                         <span class="material-icons text-base dropdown-indicator">expand_more</span>
                     </button>
                     <div id="mobile-services-dropdown" class="mobile-dropdown pl-4 mt-1 space-y-1">
-                        <!-- PRIMARY CATEGORY: WEB & PRODUCT DEVELOPMENT -->
-                        <a href="/services/web-development" class="mobile-link-hover flex items-center py-2 px-4 rounded-lg transition-colors font-semibold text-sm text-blue-800 bg-blue-50">
-                            <i class="fas fa-code text-blue-500 w-5 mr-2"></i>
-                            Web & Product Development
+                        <a href="/services/web-development" class="mobile-link-hover flex items-center gap-2 py-2 px-4 rounded-lg transition-colors text-sm">
+                            <i class="fas fa-code text-gray-500 w-5" aria-hidden="true"></i>
+                            Web Development
                         </a>
-                        
-                        <!-- Sub-Services (using indentation) -->
-                        <a href="/services/web-development#design" class="mobile-link-hover flex items-center py-1 px-4 rounded-lg transition-colors text-sm pl-8">
-                            <i class="fas fa-palette text-blue-400 w-5 mr-2 opacity-70"></i>
-                            Custom Websites & CMS
+                        <a href="/services/digital-marketing#seo" class="mobile-link-hover flex items-center gap-2 py-2 px-4 rounded-lg transition-colors text-sm">
+                            <i class="fas fa-magnifying-glass text-gray-500 w-5" aria-hidden="true"></i>
+                            Search Engine Optimization
                         </a>
-                        <a href="/services/web-development#webapp" class="mobile-link-hover flex items-center py-1 px-4 rounded-lg transition-colors text-sm pl-8">
-                            <i class="fas fa-terminal text-blue-400 w-5 mr-2 opacity-70"></i>
-                            Web Applications & Portals
+                        <a href="/services/digital-marketing#performance-marketing" class="mobile-link-hover flex items-center gap-2 py-2 px-4 rounded-lg transition-colors text-sm">
+                            <i class="fas fa-chart-line text-gray-500 w-5" aria-hidden="true"></i>
+                            Performance Marketing
                         </a>
-                        <a href="/services/web-development#design" class="mobile-link-hover flex items-center py-1 px-4 rounded-lg transition-colors text-sm pl-8">
-                            <i class="fas fa-layer-group text-blue-400 w-5 mr-2 opacity-70"></i>
-                            UX/UI Design Systems
+                        <a href="/services/digital-marketing#social-media" class="mobile-link-hover flex items-center gap-2 py-2 px-4 rounded-lg transition-colors text-sm">
+                            <i class="fas fa-hashtag text-gray-500 w-5" aria-hidden="true"></i>
+                            Social Media Marketing
                         </a>
-                        <a href="/services/managed-cloud" class="mobile-link-hover flex items-center py-1 px-4 rounded-lg transition-colors text-sm pl-8">
-                            <i class="fas fa-server text-indigo-500 w-5 mr-2 opacity-70"></i>
-                            Infrastructure & Deployment
+                        <a href="/services/ai-automation" class="mobile-link-hover flex items-center gap-2 py-2 px-4 rounded-lg transition-colors text-sm">
+                            <i class="fas fa-robot text-gray-500 w-5" aria-hidden="true"></i>
+                            AI Automation
                         </a>
-                        
-                        <!-- PRIMARY CATEGORY: AI & WORKFLOW INTEGRATION -->
-                        <a href="/services/ai-automation" class="mobile-link-hover flex items-center py-2 px-4 rounded-lg transition-colors text-sm mt-2">
-                            <i class="fas fa-robot text-purple-600 w-5 mr-2"></i>
-                            AI & Workflow Integration
+                        <a href="/services/managed-cloud" class="mobile-link-hover flex items-center gap-2 py-2 px-4 rounded-lg transition-colors text-sm">
+                            <i class="fas fa-cloud text-gray-500 w-5" aria-hidden="true"></i>
+                            Managed Cloud Services
                         </a>
-                        
-                        <!-- PRIMARY CATEGORY: DIGITAL MARKETING & ACQUISITION -->
-                        <a href="/services/digital-ads" class="mobile-link-hover flex items-center py-2 px-4 rounded-lg transition-colors text-sm">
-                            <i class="fas fa-bullhorn text-red-600 w-5 mr-2"></i>
-                            Digital Marketing & Acquisition
+                        <a href="/#services" class="mobile-link-hover flex items-center gap-2 py-2 px-4 rounded-lg transition-colors text-sm font-semibold text-purple-600">
+                            <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                            All Services
                         </a>
                     </div>
                 </div>
+
                
-                <a href="/pricing" class="mobile-menu-item mobile-link-hover block py-3 px-4 rounded-lg transition-colors" style="animation-delay: 0.2s">Pricing</a>
+                <a href="/case-studies" class="mobile-menu-item mobile-link-hover block py-3 px-4 rounded-lg transition-colors" style="animation-delay: 0.2s">Case Studies</a>
                 <a href="/about-us" class="mobile-menu-item mobile-link-hover block py-3 px-4 rounded-lg transition-colors" style="animation-delay: 0.25s">About Us</a>
                 
                 <!-- Mobile CTA -->

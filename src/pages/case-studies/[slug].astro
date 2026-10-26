@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allCaseStudies } from '../../data/case-studies';
+import type { CaseStudy } from '../../data/case-studies/types';
+
+export function getStaticPaths() {
+  return allCaseStudies.map((study) => ({
+    params: { slug: study.slug },
+    props: { study },
+  }));
+}
+
+interface Props {
+  study: CaseStudy;
+}
+
+const { study } = Astro.props;
+const metricGridClass = study.metrics.length === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3';
+---
+
+<BaseLayout
+  title={`${study.title} | Fexaris Studio`}
+  description={study.summary}
+  keywords={`${study.tags.join(', ')}, case study, fexaris studio`}
+  canonical={`https://fexaris.com/case-studies/${study.slug}/`}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-[#0F1117] px-4 pb-16 pt-32 text-white sm:px-6 lg:px-8">
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(91,61,245,0.28),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(20,216,196,0.18),transparent_40%)]"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto max-w-4xl">
+      <a
+        href="/case-studies/"
+        class="inline-flex items-center gap-2 text-sm font-medium text-gray-400 transition-colors hover:text-cyan-300"
+      >
+        <i class="fas fa-arrow-left text-xs" aria-hidden="true"></i>
+        All Case Studies
+      </a>
+
+      <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-cyan-300">
+        {study.tags.join(' · ')}
+      </p>
+      <h1 class="mt-3 text-4xl font-bold leading-tight md:text-5xl">
+        {study.title}
+      </h1>
+      <p class="mt-5 max-w-2xl text-lg text-body">
+        {study.summary}
+      </p>
+      <div class="mt-8">
+        <a href="/contact-us" class="btn-primary btn-md">
+          <i class="fas fa-calendar-check mr-2" aria-hidden="true"></i>
+          Book a Strategy Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics -->
+  <section class="bg-white pb-4 pt-12 md:pt-16">
+    <div class="mx-auto max-w-4xl px-4 md:px-6">
+      <div class={`grid grid-cols-2 gap-4 ${metricGridClass}`}>
+        {
+          study.metrics.map((metric) => (
+            <div class="rounded-xl border border-purple-100 bg-purple-50 p-5 text-center">
+              <div class="text-2xl font-bold text-purple-600">{metric.value}</div>
+              <div class="mt-1 text-[11px] uppercase tracking-wide text-gray-500">{metric.label}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="bg-white pb-16 pt-10 md:pb-24 md:pt-14">
+    <div class="mx-auto max-w-4xl px-4 md:px-6">
+      <div class="space-y-10">
+        <div>
+          <h2 class="mb-3 text-2xl font-bold text-gray-900">The Challenge</h2>
+          <p class="leading-relaxed text-gray-600">{study.challenge}</p>
+        </div>
+
+        <div>
+          <h2 class="mb-3 text-2xl font-bold text-gray-900">Our Solution</h2>
+          <p class="leading-relaxed text-gray-600">{study.solution}</p>
+        </div>
+
+        <div>
+          <h2 class="mb-3 text-2xl font-bold text-gray-900">The Results</h2>
+          <p class="leading-relaxed text-gray-600">{study.results}</p>
+        </div>
+      </div>
+
+      {
+        study.testimonial && (
+          <blockquote class="mt-12 rounded-2xl border-l-4 border-purple-600 bg-gray-50 p-6">
+            <p class="text-lg italic leading-relaxed text-gray-700">“{study.testimonial.quote}”</p>
+            <footer class="mt-4 text-sm text-gray-500">
+              <span class="font-semibold text-gray-900">{study.testimonial.author}</span> — {study.testimonial.role}
+            </footer>
+          </blockquote>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gradient-to-br from-purple-50 to-blue-50 px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-[#0F1117] to-[#14122B] p-10 text-center text-white shadow-xl md:p-14">
+      <h2 class="text-3xl font-bold md:text-4xl">
+        Ready to{' '}
+        <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          Get Similar Results
+        </span>?
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-body">
+        Book a 30-minute strategy call. We will audit your pipeline and show you exactly where you are leaking revenue.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="/contact-us" class="btn-primary btn-md">
+          Book Your Strategy Call
+          <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
+        </a>
+        <a href="/case-studies/" class="btn-ghost btn-md">View All Case Studies</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

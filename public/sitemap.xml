@@ -52,8 +52,8 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://fexaris.com/services/digital-ads/</loc>
-        <lastmod>2026-08-09</lastmod>
+        <loc>https://fexaris.com/services/digital-marketing/</loc>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -62,6 +62,49 @@
         <lastmod>2026-08-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://fexaris.com/case-studies/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fexaris.com/case-studies/scbl-website/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fexaris.com/case-studies/scbl-seo/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fexaris.com/case-studies/pleroma-travel/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fexaris.com/case-studies/townlink-services/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fexaris.com/case-studies/ellmak-home-care/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fexaris.com/case-studies/spl-speed-to-lead/</loc>
+        <lastmod>2026-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 
     <url>

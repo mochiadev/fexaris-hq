@@ -1,0 +1,82 @@
+---
+import type { Metric } from '../data/case-studies/types';
+
+interface Props {
+  title: string;
+  category: string;
+  thumbnail: string;
+  summary: string;
+  metrics: Metric[];
+  slug: string;
+}
+
+const { title, category, thumbnail, summary, metrics, slug } = Astro.props;
+
+const categoryMeta: Record<string, { badge: string; label: string }> = {
+  websites: {
+    badge: 'border-cyan-400/40 bg-cyan-50 text-cyan-700',
+    label: 'BUILD',
+  },
+  seo: {
+    badge: 'border-purple-400/40 bg-purple-50 text-purple-700',
+    label: 'DISCOVER',
+  },
+  'ai-automation': {
+    badge: 'border-green-500/40 bg-green-50 text-green-700',
+    label: 'AUTOMATE',
+  },
+};
+
+const meta = categoryMeta[category] ?? {
+  badge: 'border-gray-200 bg-gray-100 text-gray-600',
+  label: category,
+};
+
+const primaryMetric = metrics[0];
+---
+
+<a
+  href={`/case-studies/${slug}/`}
+  class="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:shadow-xl"
+>
+  <div class="relative aspect-[16/10] overflow-hidden bg-gray-100">
+    <img
+      src={thumbnail}
+      alt={title}
+      width="400"
+      height="250"
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+    <div class="absolute left-3 top-3">
+      <span class={`rounded border px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-widest ${meta.badge}`}>
+        {meta.label}
+      </span>
+    </div>
+  </div>
+
+  <div class="flex flex-1 flex-col p-5">
+    <h3 class="mb-2 text-lg font-bold text-gray-900 transition-colors group-hover:text-purple-600">
+      {title}
+    </h3>
+    <p class="mb-4 flex-1 text-sm leading-relaxed text-gray-600">
+      {summary}
+    </p>
+
+    {
+      primaryMetric && (
+        <div class="flex items-center gap-2 border-t border-gray-100 pt-3">
+          <i class="fas fa-chart-line text-sm text-purple-600" aria-hidden="true"></i>
+          <span class="text-sm font-semibold text-purple-600">{primaryMetric.value}</span>
+          <span class="text-xs text-gray-500">{primaryMetric.label}</span>
+        </div>
+      )
+    }
+
+    <div class="mt-3 flex items-center gap-1 text-sm font-medium text-purple-600 opacity-0 transition-opacity group-hover:opacity-100">
+      <span>View Case Study</span>
+      <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
+    </div>
+  </div>
+</a>

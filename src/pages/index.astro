@@ -1,5 +1,56 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Web Development',
+    description: 'Custom websites and web applications that deliver exceptional user experiences and drive conversions.',
+    href: '/services/web-development',
+    icon: 'fa-code',
+    accentText: 'text-violet-600',
+    iconBg: 'bg-violet-600',
+    cardTint: 'bg-violet-50',
+    cardBorder: 'border-violet-500/40',
+    cardHoverBorder: 'hover:border-violet-500',
+    bullets: ['Responsive Websites', 'E-commerce & Portals', 'CMS (Webflow/WordPress/Headless)'],
+  },
+  {
+    title: 'AI Automation',
+    description: 'Intelligent automation solutions that streamline operations and unlock new efficiencies.',
+    href: '/services/ai-automation',
+    icon: 'fa-robot',
+    accentText: 'text-blue-500',
+    iconBg: 'bg-blue-500',
+    cardTint: 'bg-blue-50',
+    cardBorder: 'border-blue-400/40',
+    cardHoverBorder: 'hover:border-blue-500',
+    bullets: ['Process Automation (Zapier/n8n)', 'Custom AI Chatbots', 'Data & API Integrations'],
+  },
+  {
+    title: 'Digital Marketing',
+    description: 'Data-driven marketing campaigns across search, social, and paid media that reach your ideal customers and maximize ROI.',
+    href: '/services/digital-marketing',
+    icon: 'fa-rocket',
+    accentText: 'text-orange-600',
+    iconBg: 'bg-orange-500',
+    cardTint: 'bg-orange-50',
+    cardBorder: 'border-orange-400/40',
+    cardHoverBorder: 'hover:border-orange-500',
+    bullets: ['LinkedIn & Meta Ads', 'SEO / GEO', 'Conversion Optimization'],
+  },
+  {
+    title: 'Managed Cloud',
+    description: 'Secure, scalable cloud infrastructure and management for your digital operations.',
+    href: '/services/managed-cloud',
+    icon: 'fa-cloud',
+    accentText: 'text-purple-600',
+    iconBg: 'bg-purple-500',
+    cardTint: 'bg-purple-50',
+    cardBorder: 'border-purple-400/40',
+    cardHoverBorder: 'hover:border-purple-500',
+    bullets: ['Cloud Migration', 'Infrastructure Management', '24/7 Monitoring'],
+  },
+];
 ---
 
 <BaseLayout
@@ -223,176 +274,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <!-- End of Logos Slide Section -->
 
 <!-- Services Section -->
-<section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-20" id="services">
-            <h2 class="
-                text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
-                font-extrabold tracking-tight text-gray-900 leading-tight mb-8
-            ">
-                <span class="text-gray-900">Three</span> <span class="text-violet-600">Growth Pillars</span>
+<section class="py-20 sm:py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="mb-10 scroll-mt-24" id="services">
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight mb-5">
+                Our <span class="text-violet-600">Services</span>
             </h2>
-            
-            <p class="text-lg sm:text-xl text-gray-700 max-w-3xl mb-0">
-                We help ambitious businesses grow through three integrated pillars — engineering, acquisition, and intelligent automation.
-                Our passion lies in <b>building scalable digital engines</b> that deliver measurable revenue.
+
+            <p class="text-base sm:text-lg text-gray-700 max-w-2xl">
+                Comprehensive digital services to transform your business and drive measurable results.
+                Our passion lies in <b>empowering businesses of all sizes</b> to achieve success.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            
-            <!-- Pillar 1: Web & Product Development -->
-            <div class="
-                group relative p-6 sm:p-8 rounded-xl border-2 border-violet-500 bg-gradient-to-br from-gray-50 to-white
-                flex flex-col justify-between overflow-hidden transition-all duration-500 hover:shadow-2xl service-card
-            ">
-                <div class="flex justify-between items-start mb-4 sm:mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                        <i class="fas fa-code text-2xl text-white"></i>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+            {services.map((service, index) => (
+                <article
+                    class={`home-service-card group relative flex flex-col rounded-2xl border p-6 sm:p-7 min-h-[300px] ${service.cardTint} ${service.cardBorder} ${service.cardHoverBorder}`}
+                    data-aos="fade-up"
+                    data-aos-delay={(index + 1) * 100}
+                >
+                    <div class="flex items-start justify-between">
+                        <div class={`flex h-12 w-12 items-center justify-center rounded-xl ${service.iconBg}`}>
+                            <i class={`fas ${service.icon} text-xl text-white`} aria-hidden="true"></i>
+                        </div>
+                        <span class={`text-xl font-light leading-none ${service.accentText}`} aria-hidden="true">+</span>
                     </div>
-                    <button class="text-violet-500 hover:text-violet-700 transition duration-200 text-xl sm:text-2xl font-light leading-none">
-                        +
-                    </button>
-                </div>
-                
-                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 group-hover:text-violet-600 transition-colors">Custom Web Development</h3>
-                
-                <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
-                    Engineering high-converting, modern web infrastructure that serves as your most valuable digital asset.
-                </p>
 
-                <ul class="space-y-2 text-gray-600 mb-6">
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Professional Websites for Business
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        CMS Architecture (Webflow, WordPress, Headless CMS)
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        UX/UI Design
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Web Applications & Client Portals
-                    </li>
-                </ul>
+                    <h3 class="mt-5 text-xl sm:text-2xl font-bold text-gray-900">{service.title}</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-gray-600">{service.description}</p>
 
-                <a href="/services/web-development" class="
-                    self-end p-3 rounded-full bg-violet-600 text-white 
-                    hover:bg-violet-700 transition duration-300
-                    flex items-center justify-center w-12 h-12
-                ">
-                    <i class="fas fa-arrow-right text-xl"></i>
-                </a>
-            </div>
-            
-            <!-- Pillar 2: Digital Marketing & Acquisition -->
-            <div class="
-                group relative p-6 sm:p-8 rounded-xl border-2 border-amber-500 bg-gradient-to-br from-gray-50 to-white
-                flex flex-col justify-between overflow-hidden transition-all duration-500 hover:shadow-2xl service-card
-            ">
-                <div class="flex justify-between items-start mb-4 sm:mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    <ul class="mt-5 space-y-2 text-sm text-gray-700">
+                        {service.bullets.map((bullet) => (
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500" aria-hidden="true"></i>
+                                <span>{bullet}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div class="mt-auto self-end pt-6">
+                        <a
+                            href={service.href}
+                            aria-label={`Explore ${service.title}`}
+                            class={`flex h-9 w-9 items-center justify-center rounded-full ${service.iconBg} text-white transition-transform duration-300 group-hover:translate-x-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900`}
+                        >
+                            <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <button class="text-amber-500 hover:text-amber-700 transition duration-200 text-xl sm:text-2xl font-light leading-none">
-                        +
-                    </button>
-                </div>
-                
-                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 group-hover:text-amber-600 transition-colors">Digital Marketing & Acquisition</h3>
-                
-                <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
-                    Driving predictable revenue, high-ticket lead flow, and organic market reach through targeted performance funnels.
-                </p>
-
-                <ul class="space-y-2 text-gray-600 mb-6">
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Search & Generative Engine Optimization (SEO / GEO)
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Targeted Paid Advertising (LinkedIn & Meta Ads)
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Content Marketing
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Email Marketing
-                    </li>
-                </ul>
-
-                <a href="/services/digital-ads" class="
-                    self-end p-3 rounded-full bg-amber-500 text-white 
-                    hover:bg-amber-600 transition duration-300
-                    flex items-center justify-center w-12 h-12
-                ">
-                    <i class="fas fa-arrow-right text-xl"></i>
-                </a>
-            </div>
-
-            <!-- Pillar 3: AI & Workflow Integration -->
-            <div class="
-                group relative p-6 sm:p-8 rounded-xl border-2 border-violet-500 bg-gradient-to-br from-gray-50 to-white
-                flex flex-col justify-between overflow-hidden transition-all duration-500 hover:shadow-2xl service-card
-            ">
-                <div class="flex justify-between items-start mb-4 sm:mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                        <i class="fas fa-robot text-2xl text-white"></i>
-                    </div>
-                    <button class="text-violet-500 hover:text-violet-700 transition duration-200 text-xl sm:text-2xl font-light leading-none">
-                        +
-                    </button>
-                </div>
-                
-                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 group-hover:text-violet-600 transition-colors">AI & Workflow Integration</h3>
-                
-                <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
-                    Streamlining backend operations, connecting SaaS suites, and deploying intelligent chatbots to eliminate manual work.
-                </p>
-
-                <ul class="space-y-2 text-gray-600 mb-6">
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Process & API Automations (Zapier, n8n)
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Custom AI Chatbots & Support
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-green-500 mr-3"></i>
-                        Operational Automation
-                    </li>
-                </ul>
-
-                <a href="/services/ai-automation" class="
-                    self-end p-3 rounded-full bg-violet-600 text-white 
-                    hover:bg-violet-700 transition duration-300
-                    flex items-center justify-center w-12 h-12
-                ">
-                    <i class="fas fa-arrow-right text-xl"></i>
-                </a>
-            </div>
+                </article>
+            ))}
         </div>
     </div>
 </section>
 
 <style>
-    .service-card {
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    .home-service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
-    
-    .service-card:hover {
-        transform: translateY(-8px);
+
+    .home-service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 35px -18px rgba(15, 17, 23, 0.35);
     }
 </style>
 <!-- End of Services Section -->
+
 
     <!-- Why Trust Fexaris Section -->
     <section class="corporate-dark text-white py-20 px-4 sm:px-6 lg:px-8">
@@ -883,16 +830,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         .accordion-toggle.active .chevron {
             transform: rotate(180deg);
-        }
-
-        /* Service card hover effect */
-        .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         /* Digital background pattern for services section */
