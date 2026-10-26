@@ -1,0 +1,61 @@
+---
+interface Props {
+  post: import('astro:content').CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+  {post.data.image ? (
+    <div class="h-48 overflow-hidden">
+      <img
+        src={post.data.image}
+        alt={post.data.title}
+        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+  ) : (
+    <div class="h-48 bg-gradient-to-br from-[#0F1117] to-[#14122B] flex items-center justify-center">
+      <div class="text-white text-center p-6">
+        <i class="fas fa-blog text-4xl mb-2"></i>
+        <p class="text-sm opacity-80">Blog Post</p>
+      </div>
+    </div>
+  )}
+
+  <div class="p-6 flex flex-col flex-1">
+    <div class="flex items-center gap-3 mb-4 text-sm text-gray-500">
+      <span class="flex items-center gap-1">
+        <i class="fas fa-calendar"></i>
+        {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </span>
+      <span>•</span>
+      <span>{post.data.author || 'Fexaris Studio'}</span>
+    </div>
+
+    <h3 class="text-xl font-bold text-gray-900 mb-3">
+      <a href={`/blog/${post.id.replace('.md', '')}`} class="hover:text-purple-600 transition-colors hover:underline">
+        {post.data.title}
+      </a>
+    </h3>
+
+    <p class="text-gray-600 mb-4 line-clamp-3 flex-1">
+      {post.data.description}
+    </p>
+
+    {post.data.tags && post.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mt-auto">
+        {post.data.tags.map(tag => (
+          <span key={tag} class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-medium rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+</article>

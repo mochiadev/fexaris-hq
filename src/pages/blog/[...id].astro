@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={`${post.data.title} | Fexaris Studio Blog`}
+  description={post.data.description}
+  keywords={[...post.data.tags || [], 'blog', 'digital marketing', 'ai automation'].join(', ')}
+  canonical={`https://fexaris.com/blog/${post.id}/`}
+>
+
+<article class="relative pt-32 pb-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Header */}
+    <header class="text-center mb-12">
+      <div class="flex items-center justify-center gap-3 mb-6 text-sm text-gray-500">
+        <span>{new Date(post.data.pubDate).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}</span>
+        <span>•</span>
+        <span>{post.data.author || 'Fexaris Studio'}</span>
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+        {post.data.title}
+      </h1>
+
+      {post.data.image && (
+        <div class="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src={post.data.image}
+            alt={post.data.title}
+            class="w-full"
+          />
+        </div>
+      )}
+
+      <p class="text-xl text-gray-600 mt-8 max-w-2xl mx-auto">
+        {post.data.description}
+      </p>
+    </header>
+
+    {/* Tags */}
+    {post.data.tags && post.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 justify-center mb-12">
+        {post.data.tags.map(tag => (
+          <span key={tag} class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+
+    {/* Content */}
+    <div class="prose prose-lg max-w-none text-gray-700 mt-8 {post.data.className || ''}">
+      <Content />
+    </div>
+
+    {/* Newsletter CTA */}
+    <div class="mt-16 bg-gradient-to-r from-[#0F1117] to-[#14122B] rounded-2xl p-8 text-center text-white">
+      <h2 class="text-2xl font-bold mb-4">Want more insights like this?</h2>
+      <p class="mb-6 opacity-90">Join our weekly newsletter for digital marketing and AI automation tips.</p>
+      <form action="https://formsubmit.co/hello@fexaris.com" method="POST" class="max-w-md mx-auto">
+        <input type="hidden" name="_subject" value="Blog Newsletter Signup">
+        <input type="hidden" name="_template" value="table">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            required
+            class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <button type="submit" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all">
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+
+    {/* Back to Blog */}
+    <div class="mt-12 text-center">
+      <a href="/blog" class="inline-flex items-center text-purple-600 hover:text-purple-700">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Back to Blog
+      </a>
+    </div>
+  </div>
+</article>
+
+</BaseLayout>
